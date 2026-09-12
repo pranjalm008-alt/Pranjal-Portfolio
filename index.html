@@ -1,0 +1,1885 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pranjal Thakur | Marketing Professional</title>
+
+    <meta name="description"
+          content="Portfolio of Pranjal Thakur, a marketing professional specializing in digital marketing, performance marketing, market research, lead generation and brand strategy.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        :root {
+            --bg: #080808;
+            --bg-light: #111111;
+            --card: #151515;
+            --text: #f5f5f5;
+            --muted: #a3a3a3;
+            --accent: #c8ff00;
+            --border: rgba(255,255,255,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1150px, 90%);
+            margin: auto;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(8,8,8,0.88);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .menu-btn {
+            display: none;
+
+            background: none;
+            border: none;
+
+            color: white;
+            font-size: 25px;
+
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding-top: 80px;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 450px;
+            height: 450px;
+
+            background: var(--accent);
+
+            filter: blur(180px);
+
+            opacity: 0.08;
+
+            top: 10%;
+            right: -100px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            color: var(--accent);
+
+            font-size: 14px;
+            font-weight: 600;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: clamp(55px, 9vw, 105px);
+
+            line-height: 0.95;
+
+            letter-spacing: -5px;
+
+            margin-bottom: 30px;
+        }
+
+        h1 span {
+            color: var(--accent);
+        }
+
+        .hero-description {
+            max-width: 680px;
+
+            font-size: 19px;
+
+            color: var(--muted);
+
+            margin-bottom: 40px;
+        }
+
+        .buttons {
+            display: flex;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 25px;
+
+            border-radius: 6px;
+
+            font-weight: 600;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+
+            border: 1px solid var(--border);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 30px rgba(200,255,0,0.15);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+
+            color: var(--accent);
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 120px 0;
+        }
+
+        .section-label {
+            color: var(--accent);
+
+            font-size: 13px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+
+            font-weight: 700;
+        }
+
+        .section-title {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: clamp(35px, 5vw, 55px);
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 55px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .about-text {
+            color: var(--muted);
+
+            font-size: 17px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-highlight {
+            border-left: 2px solid var(--accent);
+
+            padding-left: 25px;
+
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 28px;
+
+            line-height: 1.3;
+        }
+
+        /* =========================
+           STATS
+        ========================= */
+
+        .stats {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+
+            margin-top: 35px;
+        }
+
+        .stat {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            padding: 25px;
+
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 35px;
+
+            font-weight: 700;
+
+            color: var(--accent);
+        }
+
+        .stat-text {
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .experience {
+            border-top: 1px solid var(--border);
+        }
+
+        .experience-item {
+            display: grid;
+
+            grid-template-columns: 180px 1fr;
+
+            gap: 40px;
+
+            padding: 40px 0;
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+        .experience-date {
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+        .experience-company {
+            color: var(--accent);
+
+            font-size: 14px;
+
+            margin-bottom: 7px;
+
+            font-weight: 600;
+        }
+
+        .experience-role {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 28px;
+
+            margin-bottom: 15px;
+        }
+
+        .experience-description {
+            color: var(--muted);
+
+            max-width: 800px;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-section {
+            background: var(--bg-light);
+        }
+
+        .skills {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .skill {
+            padding: 14px 20px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 50px;
+
+            color: #ddd;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            background: var(--accent);
+
+            color: #000;
+
+            border-color: var(--accent);
+
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           SOCIAL MEDIA WORK
+        ========================= */
+
+        .social-work {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .social-card {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            padding: 35px;
+
+            min-height: 230px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            transition: 0.3s;
+        }
+
+        .social-card:hover {
+            transform: translateY(-6px);
+
+            border-color:
+                rgba(200,255,0,0.45);
+        }
+
+        .social-number {
+            color: var(--accent);
+
+            font-size: 13px;
+        }
+
+        .social-card h3 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 27px;
+
+            margin: 18px 0 10px;
+        }
+
+        .social-card p {
+            color: var(--muted);
+
+            font-size: 15px;
+        }
+
+        .view-work {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            color: var(--accent);
+
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+        .view-work:hover {
+            text-decoration: underline;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .project {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            padding: 35px;
+
+            min-height: 280px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-6px);
+
+            border-color:
+                rgba(200,255,0,0.4);
+        }
+
+        .project-number {
+            color: var(--accent);
+
+            font-size: 13px;
+        }
+
+        .project h3 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 27px;
+
+            margin: 20px 0 12px;
+        }
+
+        .project p {
+            color: var(--muted);
+
+            font-size: 15px;
+        }
+
+        .project-tags {
+            display: flex;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+
+            margin-top: 20px;
+        }
+
+        .project-tags span {
+            font-size: 11px;
+
+            padding: 5px 9px;
+
+            border-radius: 4px;
+
+            background: #222;
+
+            color: #bbb;
+        }
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+
+            margin-bottom: 20px;
+        }
+
+        .education-card {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            padding: 35px;
+
+            border-radius: 12px;
+        }
+
+        .education-card h3 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 25px;
+
+            margin-bottom: 8px;
+        }
+
+        .education-card .institution {
+            color: var(--accent);
+
+            font-size: 14px;
+
+            margin-bottom: 8px;
+        }
+
+        .education-card p {
+            color: var(--muted);
+        }
+
+        .certificates {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .certificate {
+            border: 1px solid var(--border);
+
+            padding: 14px 18px;
+
+            border-radius: 8px;
+
+            color: #ccc;
+
+            font-size: 14px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-section {
+            text-align: center;
+
+            padding-bottom: 100px;
+        }
+
+        .contact-section .section-title {
+            max-width: 750px;
+
+            margin: 0 auto 25px;
+        }
+
+        .contact-text {
+            color: var(--muted);
+
+            max-width: 550px;
+
+            margin: 0 auto 35px;
+        }
+
+        .contact-email {
+            display: inline-block;
+
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size:
+                clamp(22px, 4vw, 40px);
+
+            margin-bottom: 20px;
+
+            border-bottom:
+                2px solid var(--accent);
+        }
+
+        .contact-phone {
+            display: block;
+
+            color: var(--muted);
+
+            margin-bottom: 35px;
+
+            font-size: 16px;
+        }
+
+        .socials {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+        .socials a:hover {
+            color: var(--accent);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid var(--border);
+
+            padding: 25px 0;
+
+            color: #666;
+
+            font-size: 13px;
+        }
+
+        .footer-inner {
+            display: flex;
+
+            justify-content: space-between;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .nav-links {
+                display: none;
+
+                position: absolute;
+
+                top: 75px;
+                left: 0;
+
+                width: 100%;
+
+                background: #0b0b0b;
+
+                flex-direction: column;
+
+                padding: 25px;
+
+                gap: 20px;
+
+                border-bottom:
+                    1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            h1 {
+                letter-spacing: -3px;
+            }
+
+            .hero-description {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-item {
+                grid-template-columns: 1fr;
+
+                gap: 10px;
+            }
+
+            .social-work,
+            .projects,
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project,
+            .social-card {
+                min-height: 250px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+
+                gap: 10px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <div class="container nav-inner">
+
+        <a href="#" class="logo">
+            PRANJAL<span>.</span>
+        </a>
+
+        <button
+            class="menu-btn"
+            onclick="toggleMenu()"
+            aria-label="Open navigation">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#work">Work</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Marketing Manager • Digital Marketing
+            </div>
+
+            <h1>
+                I build<br>
+                <span>brands.</span>
+            </h1>
+
+            <p class="hero-description">
+                I'm Pranjal Thakur, a marketing professional with experience
+                across digital marketing, performance marketing, market
+                research, lead generation, campaign management and client
+                communication.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    href="#experience"
+                    class="btn btn-primary">
+                    View My Experience
+                </a>
+
+                <a
+                    href="#contact"
+                    class="btn btn-secondary">
+                    Let's Talk
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-label">
+            01 — About
+        </div>
+
+        <h2 class="section-title">
+            Marketing with<br>
+            purpose.
+        </h2>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    Results-driven marketing professional with experience
+                    in digital marketing, performance marketing, market
+                    research, lead generation, client communication,
+                    campaign management and basic accounts support.
+                </p>
+
+                <p>
+                    I develop and implement marketing strategies designed
+                    to improve brand visibility, strengthen digital presence
+                    and support business growth.
+                </p>
+
+                <p>
+                    My experience combines creative marketing with research,
+                    data, campaign performance and customer-focused
+                    communication.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <div class="about-highlight">
+
+                    "Good marketing isn't just about getting attention.
+                    It's about being remembered."
+
+                </div>
+
+
+                <div class="stats">
+
+                    <div class="stat">
+
+                        <div class="stat-number">
+                            4+
+                        </div>
+
+                        <div class="stat-text">
+                            Professional Roles
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <div class="stat-number">
+                            3+
+                        </div>
+
+                        <div class="stat-text">
+                            Years Marketing Experience
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <div class="stat-number">
+                            UAE
+                        </div>
+
+                        <div class="stat-text">
+                            Market Experience
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section id="experience" class="experience">
+
+    <div class="container">
+
+        <div class="section-label">
+            02 — Experience
+        </div>
+
+        <h2 class="section-title">
+            Where I've<br>
+            worked.
+        </h2>
+
+
+        <!-- JOB 1 -->
+
+        <div class="experience-item">
+
+            <div class="experience-date">
+                May 2025 — Aug 2026
+            </div>
+
+            <div>
+
+                <div class="experience-company">
+                    NEW MALIK TRANSPORTATION SPC. LLC.
+                </div>
+
+                <h3 class="experience-role">
+                    Marketing Manager
+                </h3>
+
+                <p class="experience-description">
+
+                    Managed the company website, ensuring updated content
+                    and a strong online presence. Handled client
+                    communications, built relationships and supported
+                    customer satisfaction.
+
+                    <br><br>
+
+                    Developed and implemented marketing strategies to
+                    increase brand visibility and support business growth,
+                    while collaborating with internal teams to align
+                    marketing activities with company goals.
+
+                    <br><br>
+
+                    Also supported basic accounts-related activities,
+                    including invoice preparation, expense tracking,
+                    payment follow-ups and maintaining financial records.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- JOB 2 -->
+
+        <div class="experience-item">
+
+            <div class="experience-date">
+                Nov 2024 — Mar 2025
+            </div>
+
+            <div>
+
+                <div class="experience-company">
+                    CROGEEKS
+                </div>
+
+                <h3 class="experience-role">
+                    Performance Marketer
+                </h3>
+
+                <p class="experience-description">
+
+                    Managed digital marketing activities across SEO,
+                    PPC advertising, social media marketing and content
+                    marketing.
+
+                    <br><br>
+
+                    Applied market research findings to tailor campaigns
+                    according to industry trends and customer preferences.
+
+                    Conducted competitor and industry trend analysis to
+                    support strategic decision-making.
+
+                    <br><br>
+
+                    Monitored key performance indicators to optimize online
+                    presence and improve user experience.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- JOB 3 -->
+
+        <div class="experience-item">
+
+            <div class="experience-date">
+                Aug 2022 — Aug 2024
+            </div>
+
+            <div>
+
+                <div class="experience-company">
+                    YSM CONSTRUCTIONS
+                </div>
+
+                <h3 class="experience-role">
+                    Market Research & Sales
+                </h3>
+
+                <p class="experience-description">
+
+                    Developed and maintained relationships with key
+                    industry contacts to gather market intelligence.
+
+                    <br><br>
+
+                    Created detailed market reports and presentations for
+                    business and sales planning.
+
+                    <br><br>
+
+                    Played a key role in securing a contract with a major
+                    client and supported the full sales process from lead
+                    generation through after-sales support.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- JOB 4 -->
+
+        <div class="experience-item">
+
+            <div class="experience-date">
+                Jun 2023 — Aug 2023
+            </div>
+
+            <div>
+
+                <div class="experience-company">
+                    CROGEEKS
+                </div>
+
+                <h3 class="experience-role">
+                    Digital Marketing Intern
+                </h3>
+
+                <p class="experience-description">
+
+                    Gained hands-on experience in SEO, PPC advertising,
+                    social media marketing and content marketing.
+
+                    <br><br>
+
+                    Assisted with campaign execution, online presence
+                    improvement and marketing research.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills" class="skills-section">
+
+    <div class="container">
+
+        <div class="section-label">
+            03 — Skills
+        </div>
+
+        <h2 class="section-title">
+            Things I<br>
+            work with.
+        </h2>
+
+
+        <div class="skills">
+
+            <span class="skill">
+                Digital Marketing
+            </span>
+
+            <span class="skill">
+                Performance Marketing
+            </span>
+
+            <span class="skill">
+                SEO
+            </span>
+
+            <span class="skill">
+                PPC Advertising
+            </span>
+
+            <span class="skill">
+                Google Ads
+            </span>
+
+            <span class="skill">
+                Social Media Marketing
+            </span>
+
+            <span class="skill">
+                Content Marketing
+            </span>
+
+            <span class="skill">
+                Market Research
+            </span>
+
+            <span class="skill">
+                Lead Generation
+            </span>
+
+            <span class="skill">
+                Campaign Management
+            </span>
+
+            <span class="skill">
+                Brand Strategy
+            </span>
+
+            <span class="skill">
+                Client Communication
+            </span>
+
+            <span class="skill">
+                Sales Support
+            </span>
+
+            <span class="skill">
+                Website Management
+            </span>
+
+            <span class="skill">
+                KPI Monitoring
+            </span>
+
+            <span class="skill">
+                Competitor Analysis
+            </span>
+
+            <span class="skill">
+                Invoice Preparation
+            </span>
+
+            <span class="skill">
+                Expense Tracking
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SOCIAL MEDIA WORK
+========================= -->
+
+<section id="work">
+
+    <div class="container">
+
+        <div class="section-label">
+            04 — Selected Work
+        </div>
+
+        <h2 class="section-title">
+            Social media<br>
+            work.
+        </h2>
+
+
+        <div class="social-work">
+
+
+            <!-- INSTAGRAM 1 -->
+
+            <div class="social-card">
+
+                <div>
+
+                    <div class="social-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Shoolini University
+                    </h3>
+
+                    <p>
+                        Social media work created for the Shoolini University
+                        Instagram presence.
+                    </p>
+
+                </div>
+
+                <a
+                    href="https://www.instagram.com/shooliniuniversity?stkn=MXJsYW4zNmI2b2x4cw=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="view-work">
+
+                    View Instagram →
+
+                </a>
+
+            </div>
+
+
+            <!-- INSTAGRAM 2 -->
+
+            <div class="social-card">
+
+                <div>
+
+                    <div class="social-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Shoolinians For You
+                    </h3>
+
+                    <p>
+                        Social media content and posts worked on for the
+                        Shoolinians For You Instagram page.
+                    </p>
+
+                </div>
+
+                <a
+                    href="https://www.instagram.com/shooliniansforyou?stkn=dnNvNHUwYWhvYjcw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="view-work">
+
+                    View Instagram →
+
+                </a>
+
+            </div>
+
+
+            <!-- INSTAGRAM REEL -->
+
+            <div class="social-card">
+
+                <div>
+
+                    <div class="social-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Instagram Reel
+                    </h3>
+
+                    <p>
+                        A reel showcasing social media content work.
+                    </p>
+
+                </div>
+
+                <a
+                    href="https://www.instagram.com/reel/DZwMlgaz8KN/?stkn=MWtzYzhmMGF6c2psNw=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="view-work">
+
+                    View Reel →
+
+                </a>
+
+            </div>
+
+
+            <!-- JOURNEY SEEKER -->
+
+            <div class="social-card">
+
+                <div>
+
+                    <div class="social-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Journey Seeker
+                    </h3>
+
+                    <p>
+                        Social media work created for the Journey Seeker
+                        Instagram page.
+                    </p>
+
+                </div>
+
+                <a
+                    href="https://www.instagram.com/journeyseeker_?stkn=MXY0eTJldHR6ZjRhMw=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="view-work">
+
+                    View Instagram →
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-label">
+            05 — Projects
+        </div>
+
+        <h2 class="section-title">
+            Research,<br>
+            strategy & ideas.
+        </h2>
+
+
+        <div class="projects">
+
+
+            <div class="project">
+
+                <div>
+
+                    <div class="project-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Social Media & Travel Behaviour
+                    </h3>
+
+                    <p>
+                        Research project analyzing whether social media posts
+                        and travel influencer vlogs impact the travel
+                        behavior and purchase choices of urban Indians.
+                    </p>
+
+                </div>
+
+                <div class="project-tags">
+
+                    <span>Research</span>
+                    <span>Social Media</span>
+                    <span>Consumer Behaviour</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div>
+
+                    <div class="project-number">
+                        02
+                    </div>
+
+                    <h3>
+                        SHEHAAT
+                    </h3>
+
+                    <p>
+                        Live project studying SHEHAAT, a rural women-led
+                        business focused on promoting women empowerment.
+                    </p>
+
+                </div>
+
+                <div class="project-tags">
+
+                    <span>Market Research</span>
+                    <span>Business</span>
+                    <span>Women Empowerment</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div>
+
+                    <div class="project-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Digital Campaign Management
+                    </h3>
+
+                    <p>
+                        Experience across SEO, PPC, social media and content
+                        marketing, with a focus on improving online presence,
+                        monitoring KPIs and supporting campaign decisions.
+                    </p>
+
+                </div>
+
+                <div class="project-tags">
+
+                    <span>SEO</span>
+                    <span>PPC</span>
+                    <span>Social Media</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div>
+
+                    <div class="project-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Market Intelligence
+                    </h3>
+
+                    <p>
+                        Market research, competitor analysis, industry trend
+                        analysis and market reporting used to support sales
+                        and strategic decision-making.
+                    </p>
+
+                </div>
+
+                <div class="project-tags">
+
+                    <span>Market Research</span>
+                    <span>Competitor Analysis</span>
+                    <span>Strategy</span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label">
+            06 — Education
+        </div>
+
+        <h2 class="section-title">
+            Education &<br>
+            certifications.
+        </h2>
+
+
+        <div class="education-grid">
+
+
+            <div class="education-card">
+
+                <h3>
+                    Master of Business Administration
+                </h3>
+
+                <div class="institution">
+                    Shoolini University, Himachal Pradesh, India
+                </div>
+
+                <p>
+                    Aug 2022 — Jul 2024
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>
+                    B.Sc. in Hospitality Administration
+                </h3>
+
+                <div class="institution">
+                    Chitkara University, Punjab, India
+                </div>
+
+                <p>
+                    Aug 2019 — Jun 2022
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="certificates">
+
+            <div class="certificate">
+                Foundations of Digital Marketing and E-commerce — Coursera
+            </div>
+
+            <div class="certificate">
+                Fundamentals of Social Media Advertising — Coursera
+            </div>
+
+            <div class="certificate">
+                Developing Innovative Ideas for Product Leaders — Coursera
+            </div>
+
+            <div class="certificate">
+                Macroeconomics for Business Management — Coursera
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact" class="contact-section">
+
+    <div class="container">
+
+        <div class="section-label">
+            07 — Contact
+        </div>
+
+        <h2 class="section-title">
+            Have an opportunity?
+        </h2>
+
+        <p class="contact-text">
+
+            I'm open to marketing, digital marketing, performance marketing,
+            business development and creative opportunities.
+
+            Let's connect.
+
+        </p>
+
+
+        <a
+            href="mailto:pranjalm008@gmail.com"
+            class="contact-email">
+
+            pranjalm008@gmail.com
+
+        </a>
+
+
+        <a
+            href="tel:+971557387916"
+            class="contact-phone">
+
+            +971 55 738 7916
+
+        </a>
+
+
+        <div
+            class="buttons"
+            style="justify-content:center;">
+
+            <a
+                href="mailto:pranjalm008@gmail.com"
+                class="btn btn-primary">
+
+                Get In Touch
+
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/pranjal-thakur-4573631b1/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary">
+
+                LinkedIn
+
+            </a>
+
+        </div>
+
+
+        <br><br>
+
+
+        <div class="socials">
+
+            <a
+                href="https://www.linkedin.com/in/pranjal-thakur-4573631b1/"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                LinkedIn
+
+            </a>
+
+            <a
+                href="mailto:pranjalm008@gmail.com">
+
+                Email
+
+            </a>
+
+            <a
+                href="tel:+971557387916">
+
+                WhatsApp / Phone
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <div>
+            © 2026 Pranjal Thakur
+        </div>
+
+        <div>
+            Marketing • Digital • Strategy
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    function toggleMenu() {
+
+        document
+            .getElementById("navLinks")
+            .classList
+            .toggle("active");
+
+    }
+
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                document
+                    .getElementById("navLinks")
+                    .classList
+                    .remove("active");
+
+            });
+
+        });
+
+</script>
+
+
+</body>
+</html>
+```
