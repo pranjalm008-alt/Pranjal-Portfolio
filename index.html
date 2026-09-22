@@ -1,13 +1,11 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pranjal Thakur | Marketing Portfolio</title>
-
-<meta name="description" content="Pranjal Thakur — Marketing professional specializing in digital marketing, performance marketing, social media, market research and lead generation.">
+<title>Pranjal Thakur — Digital Marketing Portfolio</title>
+<meta name="description" content="Portfolio of Pranjal Thakur — Digital Marketing, Performance Marketing, Social Media, Market Research and Growth.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,1265 +13,1201 @@
 
 <style>
 
-/* =========================================================
-   01. GLOBAL
-========================================================= */
+/* =========================
+   GLOBAL
+========================= */
 
 :root{
-    --bg:#070707;
-    --bg-soft:#0b0b0b;
-    --surface:#101010;
-    --surface-2:#151515;
-    --text:#f3f3ef;
-    --muted:#929292;
-    --muted-2:#5e5e5e;
-    --accent:#c8ff00;
-    --accent-soft:rgba(200,255,0,.09);
-    --line:rgba(255,255,255,.10);
-    --radius:22px;
+  --ink:#101010;
+  --paper:#f3f1eb;
+  --white:#ffffff;
+  --lime:#cfff00;
+  --lime-dark:#b7e800;
+  --purple:#7d5cff;
+  --orange:#ff6333;
+  --blue:#246bff;
+  --pink:#ff5fa2;
+  --muted:#6f6f6f;
+  --line:rgba(0,0,0,.13);
 }
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:"DM Sans",sans-serif;
-    overflow-x:hidden;
-}
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    opacity:.025;
-    z-index:9999;
-    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-::selection{
-    background:var(--accent);
-    color:#000;
+  font-family:"DM Sans",sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  overflow-x:hidden;
 }
 
 a{
-    color:inherit;
-    text-decoration:none;
-}
-
-button{
-    font:inherit;
+  text-decoration:none;
+  color:inherit;
 }
 
 img{
-    max-width:100%;
+  width:100%;
+  display:block;
+}
+
+button{
+  font:inherit;
+}
+
+::selection{
+  background:var(--lime);
+  color:#000;
 }
 
 .container{
-    width:min(1200px,90%);
-    margin:auto;
+  width:min(1240px,92%);
+  margin:auto;
 }
 
 .section{
-    padding:130px 0;
+  padding:120px 0;
 }
 
-.green{
-    color:var(--accent);
+.eyebrow{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
 }
 
-.grey{
-    color:#555;
+.display{
+  font-family:"Manrope",sans-serif;
+  font-weight:800;
+  letter-spacing:-5px;
+  line-height:.92;
 }
-
-/* =========================================================
-   02. NAV
-========================================================= */
-
-.nav-shell{
-    position:fixed;
-    width:100%;
-    top:18px;
-    z-index:1000;
-}
-
-.nav{
-    width:min(1120px,92%);
-    margin:auto;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:11px 13px 11px 20px;
-
-    border:1px solid var(--line);
-    border-radius:100px;
-
-    background:rgba(10,10,10,.72);
-    backdrop-filter:blur(20px);
-}
-
-.logo{
-    font-family:"Manrope",sans-serif;
-    font-weight:800;
-    font-size:18px;
-    letter-spacing:-1px;
-}
-
-.logo span{
-    color:var(--accent);
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:26px;
-    list-style:none;
-}
-
-.nav-links a{
-    color:#999;
-    font-size:12px;
-    transition:.25s;
-}
-
-.nav-links a:hover{
-    color:#fff;
-}
-
-.nav-button{
-    background:var(--accent);
-    color:#000;
-    padding:10px 17px;
-    border-radius:100px;
-    font-weight:700;
-    font-size:12px;
-}
-
-.menu-button{
-    display:none;
-    border:0;
-    background:none;
-    color:#fff;
-    font-size:23px;
-    cursor:pointer;
-}
-
-/* =========================================================
-   03. HERO
-========================================================= */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    position:relative;
-    overflow:hidden;
-    padding:130px 0 80px;
-}
-
-.hero-orb{
-    position:absolute;
-    width:650px;
-    height:650px;
-    right:-220px;
-    top:30px;
-    border-radius:50%;
-    background:var(--accent);
-    filter:blur(240px);
-    opacity:.075;
-}
-
-.availability{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    color:#999;
-    font-size:12px;
-    margin-bottom:35px;
-}
-
-.dot{
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:var(--accent);
-    box-shadow:0 0 15px var(--accent);
-}
-
-.hero-title{
-    font-family:"Manrope",sans-serif;
-    font-weight:800;
-    font-size:clamp(62px,10vw,140px);
-    line-height:.83;
-    letter-spacing:-8px;
-}
-
-.hero-title .stroke{
-    color:transparent;
-    -webkit-text-stroke:1px #686868;
-}
-
-.hero-lower{
-    display:grid;
-    grid-template-columns:1.25fr .75fr;
-    gap:70px;
-    margin-top:60px;
-    align-items:end;
-}
-
-.hero-copy{
-    max-width:690px;
-    color:#aaa;
-    font-size:18px;
-    line-height:1.75;
-}
-
-.hero-copy strong{
-    color:#fff;
-}
-
-.hero-actions{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-top:30px;
-}
-
-.button{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-
-    padding:13px 20px;
-    border-radius:100px;
-    border:1px solid var(--line);
-
-    font-size:12px;
-    transition:.3s;
-}
-
-.button-primary{
-    background:var(--accent);
-    color:#000;
-    font-weight:700;
-}
-
-.button-primary:hover{
-    transform:translateY(-3px);
-    box-shadow:0 12px 40px rgba(200,255,0,.13);
-}
-
-.button-secondary:hover{
-    background:#151515;
-    border-color:#555;
-}
-
-.hero-details{
-    border-left:1px solid var(--line);
-    padding-left:30px;
-}
-
-.hero-details-label{
-    color:#555;
-    font-size:10px;
-    letter-spacing:2px;
-    margin-bottom:15px;
-}
-
-.hero-details p{
-    color:#8d8d8d;
-    line-height:1.8;
-    font-size:13px;
-}
-
-.hero-details strong{
-    color:#fff;
-}
-
-/* =========================================================
-   04. MARQUEE
-========================================================= */
-
-.marquee{
-    overflow:hidden;
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-    padding:17px 0;
-}
-
-.marquee-inner{
-    display:flex;
-    width:max-content;
-    animation:marquee 28s linear infinite;
-}
-
-.marquee span{
-    font-family:"Manrope";
-    color:#777;
-    font-size:12px;
-    margin-right:42px;
-}
-
-.marquee b{
-    color:var(--accent);
-    margin-right:42px;
-}
-
-@keyframes marquee{
-    to{transform:translateX(-50%)}
-}
-
-/* =========================================================
-   05. SECTION HEADINGS
-========================================================= */
-
-.section-heading{
-    display:grid;
-    grid-template-columns:180px 1fr;
-    gap:40px;
-    margin-bottom:70px;
-}
-
-.section-index{
-    color:var(--accent);
-    font-size:11px;
-    letter-spacing:2px;
-    padding-top:8px;
-}
-
-.section-heading h2{
-    font-family:"Manrope";
-    font-size:clamp(42px,6vw,78px);
-    line-height:.98;
-    letter-spacing:-4px;
-}
-
-/* =========================================================
-   06. ABOUT
-========================================================= */
-
-.about{
-    background:var(--bg-soft);
-}
-
-.about-layout{
-    display:grid;
-    grid-template-columns:180px 1fr;
-    gap:40px;
-}
-
-.about-main{
-    display:grid;
-    grid-template-columns:1.2fr .8fr;
-    gap:70px;
-}
-
-.about-statement{
-    font-family:"Manrope";
-    font-size:clamp(26px,3vw,42px);
-    line-height:1.25;
-    letter-spacing:-1.8px;
-}
-
-.about-statement span{
-    color:#686868;
-}
-
-.about-copy{
-    color:#929292;
-    font-size:15px;
-    line-height:1.9;
-}
-
-.about-copy p + p{
-    margin-top:20px;
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    margin-top:70px;
-    border:1px solid var(--line);
-}
-
-.stat{
-    padding:30px;
-    border-right:1px solid var(--line);
-}
-
-.stat:last-child{
-    border-right:0;
-}
-
-.stat strong{
-    display:block;
-    font-family:"Manrope";
-    font-size:42px;
-    letter-spacing:-2px;
-}
-
-.stat strong span{
-    color:var(--accent);
-}
-
-.stat p{
-    color:#777;
-    font-size:11px;
-    margin-top:7px;
-}
-
-/* =========================================================
-   07. CAREER SNAPSHOT
-========================================================= */
-
-.snapshot-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:12px;
-}
-
-.snapshot-card{
-    min-height:270px;
-    padding:28px;
-    border:1px solid var(--line);
-    border-radius:18px;
-    background:var(--surface);
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    transition:.3s;
-}
-
-.snapshot-card:hover{
-    transform:translateY(-5px);
-    border-color:rgba(200,255,0,.35);
-}
-
-.snapshot-number{
-    color:var(--accent);
-    font-size:11px;
-}
-
-.snapshot-card h3{
-    font-family:"Manrope";
-    font-size:23px;
-    letter-spacing:-1px;
-    line-height:1.1;
-}
-
-.snapshot-card p{
-    color:#777;
-    font-size:12px;
-    line-height:1.7;
-}
-
-/* =========================================================
-   08. EXPERIENCE
-========================================================= */
-
-.experience{
-    background:var(--bg-soft);
-}
-
-.job{
-    border-top:1px solid var(--line);
-    padding:55px 0;
-}
-
-.job:last-child{
-    border-bottom:1px solid var(--line);
-}
-
-.job-top{
-    display:grid;
-    grid-template-columns:180px 1fr;
-    gap:40px;
-    margin-bottom:35px;
-}
-
-.job-date{
-    color:#777;
-    font-size:11px;
-    padding-top:8px;
-}
-
-.job-company{
-    color:var(--accent);
-    text-transform:uppercase;
-    letter-spacing:1.5px;
-    font-size:11px;
-}
-
-.job-title{
-    font-family:"Manrope";
-    font-size:clamp(30px,4vw,48px);
-    letter-spacing:-2px;
-    margin-top:5px;
-}
-
-.job-body{
-    margin-left:220px;
-    display:grid;
-    grid-template-columns:1.2fr .8fr;
-    gap:60px;
-}
-
-.job-summary{
-    color:#9a9a9a;
-    line-height:1.85;
-    font-size:15px;
-}
-
-.job-points{
-    display:grid;
-    gap:10px;
-}
-
-.job-point{
-    padding:14px 16px;
-    border:1px solid var(--line);
-    border-radius:10px;
-    color:#999;
-    font-size:12px;
-}
-
-.job-point::before{
-    content:"↳";
-    color:var(--accent);
-    margin-right:8px;
-}
-
-/* =========================================================
-   09. WORK SHOWCASE
-========================================================= */
-
-.work-intro{
-    max-width:780px;
-    margin:-35px 0 65px 220px;
-    color:#8b8b8b;
-    line-height:1.85;
-    font-size:15px;
-}
-
-.featured-work{
-    border:1px solid var(--line);
-    border-radius:26px;
-    background:var(--surface);
-    overflow:hidden;
-    margin-bottom:25px;
-}
-
-.featured-top{
-    display:grid;
-    grid-template-columns:.9fr 1.1fr;
-}
-
-.featured-info{
-    padding:50px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-}
-
-.work-label{
-    color:var(--accent);
-    font-size:10px;
-    letter-spacing:2px;
-}
-
-.featured-info h3{
-    font-family:"Manrope";
-    font-size:clamp(36px,5vw,65px);
-    line-height:.95;
-    letter-spacing:-3px;
-    margin:30px 0 20px;
-}
-
-.featured-info p{
-    color:#8c8c8c;
-    line-height:1.8;
-    font-size:14px;
-    max-width:500px;
-}
-
-.tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:7px;
-    margin-top:25px;
-}
-
-.tag{
-    border:1px solid var(--line);
-    border-radius:100px;
-    padding:7px 11px;
-    color:#888;
-    font-size:10px;
-}
-
-.featured-action{
-    margin-top:45px;
-}
-
-.preview-panel{
-    min-height:540px;
-    background:
-        radial-gradient(circle at 70% 20%, rgba(200,255,0,.11), transparent 35%),
-        linear-gradient(135deg,#181818,#0c0c0c);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:35px;
-    border-left:1px solid var(--line);
-}
-
-.instagram-ui{
-    width:min(390px,100%);
-    background:#090909;
-    border:1px solid #292929;
-    border-radius:25px;
-    overflow:hidden;
-    box-shadow:0 30px 80px rgba(0,0,0,.45);
-    transform:rotate(2deg);
-    transition:.4s;
-}
-
-.featured-work:hover .instagram-ui{
-    transform:rotate(0deg) translateY(-6px);
-}
-
-.instagram-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:16px;
-    border-bottom:1px solid #202020;
-}
-
-.instagram-account{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.avatar{
-    width:32px;
-    height:32px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:var(--accent);
-    color:#000;
-    font-size:10px;
-    font-weight:800;
-}
-
-.instagram-name{
-    font-size:11px;
-}
-
-.fake-post{
-    aspect-ratio:1/1;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:40px;
-    background:
-        linear-gradient(145deg,rgba(200,255,0,.11),transparent 50%),
-        #121212;
-}
-
-.fake-post-content small{
-    color:var(--accent);
-    letter-spacing:2px;
-    font-size:9px;
-}
-
-.fake-post-content h4{
-    font-family:"Manrope";
-    font-size:34px;
-    line-height:1;
-    letter-spacing:-2px;
-    margin:16px 0;
-}
-
-.fake-post-content p{
-    color:#777;
-    font-size:11px;
-}
-
-.instagram-actions{
-    padding:15px;
-    color:#777;
-    font-size:11px;
-    display:flex;
-    justify-content:space-between;
-}
-
-/* =========================================================
-   10. SECONDARY WORK
-========================================================= */
-
-.work-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
-}
-
-.work-card{
-    border:1px solid var(--line);
-    background:var(--surface);
-    border-radius:20px;
-    padding:35px;
-    min-height:390px;
-    position:relative;
-    overflow:hidden;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    transition:.35s;
-}
-
-.work-card:hover{
-    transform:translateY(-7px);
-    border-color:rgba(200,255,0,.35);
-}
-
-.work-card::after{
-    content:"";
-    position:absolute;
-    width:220px;
-    height:220px;
-    background:var(--accent);
-    border-radius:50%;
-    filter:blur(120px);
-    opacity:0;
-    right:-100px;
-    bottom:-100px;
-    transition:.4s;
-}
-
-.work-card:hover::after{
-    opacity:.08;
-}
-
-.work-card-number{
-    color:var(--accent);
-    font-size:10px;
-    letter-spacing:2px;
-}
-
-.work-symbol{
-    font-family:"Manrope";
-    font-size:65px;
-    color:#3b3b3b;
-    margin:35px 0;
-}
-
-.work-card h3{
-    font-family:"Manrope";
-    font-size:32px;
-    line-height:1;
-    letter-spacing:-1.5px;
-}
-
-.work-card p{
-    color:#7e7e7e;
-    font-size:13px;
-    line-height:1.75;
-    margin-top:15px;
-}
-
-.work-card-footer{
-    position:relative;
-    z-index:2;
-    border-top:1px solid var(--line);
-    padding-top:20px;
-    margin-top:35px;
-    display:flex;
-    justify-content:space-between;
-    color:#999;
-    font-size:11px;
-}
-
-.work-card-footer b{
-    color:var(--accent);
-    font-size:18px;
-}
-
-/* =========================================================
-   11. REAL REEL EMBED
-========================================================= */
-
-.reel-showcase{
-    margin-top:25px;
-    border:1px solid var(--line);
-    border-radius:26px;
-    background:var(--surface);
-    padding:45px;
-}
-
-.reel-grid{
-    display:grid;
-    grid-template-columns:.8fr 1.2fr;
-    gap:60px;
-    align-items:center;
-}
-
-.reel-info h3{
-    font-family:"Manrope";
-    font-size:48px;
-    letter-spacing:-2px;
-    line-height:1;
-    margin:20px 0;
-}
-
-.reel-info p{
-    color:#888;
-    font-size:14px;
-    line-height:1.8;
-}
-
-.reel-embed{
-    display:flex;
-    justify-content:center;
-    min-width:0;
-}
-
-.reel-embed blockquote{
-    max-width:430px !important;
-    min-width:280px !important;
-    width:100% !important;
-}
-
-/* =========================================================
-   12. PERFORMANCE
-========================================================= */
-
-.performance{
-    background:var(--bg-soft);
-}
-
-.performance-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-}
-
-.performance-card{
-    padding:35px;
-    border:1px solid var(--line);
-    border-radius:18px;
-    background:var(--surface);
-    min-height:330px;
-}
-
-.performance-icon{
-    width:48px;
-    height:48px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border:1px solid var(--line);
-    border-radius:50%;
-    color:var(--accent);
-    margin-bottom:45px;
-}
-
-.performance-card h3{
-    font-family:"Manrope";
-    font-size:25px;
-    letter-spacing:-1px;
-    margin-bottom:15px;
-}
-
-.performance-card p{
-    color:#858585;
-    font-size:13px;
-    line-height:1.8;
-}
-
-/* =========================================================
-   13. RESEARCH PROJECTS
-========================================================= */
-
-.project{
-    display:grid;
-    grid-template-columns:100px .8fr 1.2fr;
-    gap:40px;
-    padding:40px 0;
-    border-top:1px solid var(--line);
-}
-
-.project:last-child{
-    border-bottom:1px solid var(--line);
-}
-
-.project-number{
-    color:var(--accent);
-    font-size:11px;
-}
-
-.project h3{
-    font-family:"Manrope";
-    font-size:28px;
-    letter-spacing:-1px;
-}
-
-.project p{
-    color:#858585;
-    font-size:14px;
-    line-height:1.85;
-}
-
-/* =========================================================
-   14. SKILLS
-========================================================= */
-
-.skills{
-    background:var(--bg-soft);
-}
-
-.skills-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-}
-
-.skill-card{
-    padding:35px;
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:18px;
-}
-
-.skill-number{
-    color:var(--accent);
-    font-size:10px;
-}
-
-.skill-card h3{
-    font-family:"Manrope";
-    font-size:26px;
-    margin:30px 0 20px;
-}
-
-.skill-items{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-}
-
-.skill-items span{
-    border:1px solid var(--line);
-    padding:8px 12px;
-    border-radius:100px;
-    color:#8a8a8a;
-    font-size:11px;
-}
-
-/* =========================================================
-   15. EDUCATION
-========================================================= */
-
-.education-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-}
-
-.education-card{
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:18px;
-    padding:35px;
-}
-
-.education-date{
-    color:var(--accent);
-    font-size:10px;
-    letter-spacing:1px;
-}
-
-.education-card h3{
-    font-family:"Manrope";
-    font-size:27px;
-    line-height:1.15;
-    letter-spacing:-1px;
-    margin:35px 0 12px;
-}
-
-.education-card p{
-    color:#777;
-    line-height:1.7;
-    font-size:13px;
-}
-
-.certificate-heading{
-    font-family:"Manrope";
-    font-size:30px;
-    margin:70px 0 25px;
-}
-
-.certificate{
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
-    padding:20px 0;
-    border-top:1px solid var(--line);
-    color:#aaa;
-    font-size:13px;
-}
-
-.certificate:last-child{
-    border-bottom:1px solid var(--line);
-}
-
-.certificate span:last-child{
-    color:#555;
-}
-
-/* =========================================================
-   16. CONTACT
-========================================================= */
-
-.contact{
-    min-height:90vh;
-    display:flex;
-    align-items:center;
-    position:relative;
-    overflow:hidden;
-}
-
-.contact-orb{
-    position:absolute;
-    width:550px;
-    height:550px;
-    left:30%;
-    bottom:-200px;
-    background:var(--accent);
-    filter:blur(240px);
-    opacity:.07;
-}
-
-.contact-label{
-    color:var(--accent);
-    font-size:11px;
-    letter-spacing:2px;
-    margin-bottom:30px;
-}
-
-.contact h2{
-    font-family:"Manrope";
-    font-size:clamp(60px,10vw,135px);
-    line-height:.82;
-    letter-spacing:-8px;
-}
-
-.contact-email{
-    display:inline-block;
-    font-family:"Manrope";
-    font-size:clamp(20px,3vw,38px);
-    border-bottom:2px solid var(--accent);
-    margin:50px 0 30px;
-    padding-bottom:5px;
-}
-
-.contact-actions{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-}
-
-/* =========================================================
-   17. FOOTER
-========================================================= */
-
-footer{
-    border-top:1px solid var(--line);
-    padding:28px 0;
-}
-
-.footer{
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
-    color:#555;
-    font-size:10px;
-}
-
-/* =========================================================
-   18. REVEALS
-========================================================= */
 
 .reveal{
-    opacity:0;
-    transform:translateY(30px);
-    transition:opacity .75s ease, transform .75s ease;
+  opacity:0;
+  transform:translateY(35px);
+  transition:.8s ease;
 }
 
 .reveal.show{
-    opacity:1;
-    transform:none;
+  opacity:1;
+  transform:none;
 }
 
-/* =========================================================
-   19. RESPONSIVE
-========================================================= */
+/* =========================
+   NAV
+========================= */
+
+.nav-wrap{
+  position:fixed;
+  top:18px;
+  width:100%;
+  z-index:999;
+}
+
+nav{
+  width:min(1160px,92%);
+  margin:auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:11px 13px 11px 20px;
+
+  background:rgba(243,241,235,.88);
+  backdrop-filter:blur(18px);
+
+  border:1px solid rgba(0,0,0,.1);
+  border-radius:100px;
+}
+
+.logo{
+  font-family:"Manrope";
+  font-weight:800;
+  letter-spacing:-1px;
+}
+
+.logo span{
+  color:#86ad00;
+}
+
+.nav-links{
+  display:flex;
+  list-style:none;
+  gap:27px;
+}
+
+.nav-links a{
+  font-size:12px;
+  color:#666;
+}
+
+.nav-links a:hover{
+  color:#000;
+}
+
+.nav-cta{
+  background:#111;
+  color:white;
+  padding:10px 18px;
+  border-radius:100px;
+  font-size:12px;
+}
+
+.menu{
+  display:none;
+  background:none;
+  border:0;
+  font-size:23px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding:145px 0 80px;
+  position:relative;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:520px;
+  height:520px;
+  border-radius:50%;
+  background:var(--lime);
+  filter:blur(160px);
+  opacity:.2;
+  right:-250px;
+  top:50px;
+  z-index:-1;
+}
+
+.hero-label{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin-bottom:30px;
+  font-size:12px;
+  color:#666;
+}
+
+.hero-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#82ad00;
+}
+
+.hero h1{
+  font-size:clamp(65px,11vw,150px);
+}
+
+.hero h1 span{
+  display:block;
+}
+
+.hero h1 .soft{
+  color:#a3a19b;
+}
+
+.hero h1 .highlight{
+  position:relative;
+  display:inline-block;
+  color:#111;
+  z-index:1;
+}
+
+.hero h1 .highlight::before{
+  content:"";
+  position:absolute;
+  left:-10px;
+  right:-10px;
+  bottom:4px;
+  height:32%;
+  background:var(--lime);
+  z-index:-1;
+  transform:rotate(-1deg);
+}
+
+.hero-bottom{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:100px;
+  margin-top:60px;
+}
+
+.hero-copy{
+  max-width:650px;
+  font-size:18px;
+  line-height:1.7;
+  color:#595959;
+}
+
+.hero-copy strong{
+  color:#111;
+}
+
+.hero-meta{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.meta-box{
+  border-top:1px solid #aaa;
+  padding-top:13px;
+}
+
+.meta-box small{
+  display:block;
+  color:#888;
+  margin-bottom:7px;
+}
+
+.meta-box strong{
+  font-family:"Manrope";
+  font-size:17px;
+}
+
+.hero-actions{
+  display:flex;
+  gap:10px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 20px;
+  border-radius:100px;
+  border:1px solid #bbb;
+  font-size:12px;
+  transition:.25s;
+}
+
+.btn-dark{
+  background:#111;
+  color:#fff;
+  border-color:#111;
+}
+
+.btn-lime{
+  background:var(--lime);
+  border-color:var(--lime);
+  color:#000;
+  font-weight:700;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+/* =========================
+   MOVING STRIP
+========================= */
+
+.strip{
+  background:#111;
+  color:white;
+  overflow:hidden;
+  padding:17px 0;
+}
+
+.strip-track{
+  display:flex;
+  width:max-content;
+  animation:move 25s linear infinite;
+}
+
+.strip span{
+  font-family:"Manrope";
+  font-weight:700;
+  font-size:13px;
+  margin-right:35px;
+}
+
+.strip b{
+  color:var(--lime);
+  margin-right:35px;
+}
+
+@keyframes move{
+  to{transform:translateX(-50%)}
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+  background:#111;
+  color:white;
+}
+
+.intro-grid{
+  display:grid;
+  grid-template-columns:.5fr 1.5fr;
+  gap:80px;
+}
+
+.intro h2{
+  font-size:clamp(45px,7vw,92px);
+}
+
+.intro h2 span{
+  color:#666;
+}
+
+.intro-copy{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  color:#999;
+  line-height:1.8;
+}
+
+.intro-copy strong{
+  color:white;
+}
+
+/* =========================
+   WORK HEADER
+========================= */
+
+.work-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:50px;
+  margin-bottom:65px;
+}
+
+.work-heading h2{
+  font-size:clamp(55px,8vw,105px);
+}
+
+.work-heading p{
+  max-width:420px;
+  color:#666;
+  line-height:1.7;
+  padding-bottom:10px;
+}
+
+/* =========================
+   PROJECT COMMON
+========================= */
+
+.project{
+  margin-bottom:30px;
+  border-radius:28px;
+  overflow:hidden;
+  position:relative;
+}
+
+.project-inner{
+  min-height:650px;
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+}
+
+.project-copy{
+  padding:60px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.project-category{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:2px;
+}
+
+.project-copy h3{
+  font-family:"Manrope";
+  font-size:clamp(45px,6vw,82px);
+  line-height:.9;
+  letter-spacing:-4px;
+  margin:30px 0;
+}
+
+.project-copy p{
+  font-size:14px;
+  line-height:1.8;
+  max-width:480px;
+}
+
+.project-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:25px;
+}
+
+.project-tags span{
+  padding:7px 11px;
+  border:1px solid currentColor;
+  border-radius:100px;
+  font-size:10px;
+  opacity:.7;
+}
+
+.project-link{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-top:1px solid currentColor;
+  padding-top:20px;
+  margin-top:40px;
+  font-size:12px;
+}
+
+.project-link b{
+  font-size:25px;
+}
+
+.project-visual{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+/* =========================
+   SHOOlINI
+========================= */
+
+.shoolini{
+  background:var(--lime);
+}
+
+.shoolini .project-visual{
+  background:#171717;
+}
+
+.result-badge{
+  position:absolute;
+  top:40px;
+  right:40px;
+  z-index:5;
+
+  width:165px;
+  height:165px;
+
+  border-radius:50%;
+
+  background:var(--lime);
+  color:#111;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  transform:rotate(8deg);
+}
+
+.result-badge strong{
+  font-family:"Manrope";
+  font-size:48px;
+  letter-spacing:-3px;
+  line-height:.9;
+}
+
+.result-badge span{
+  font-size:10px;
+  font-weight:700;
+  text-align:center;
+  width:100px;
+  margin-top:7px;
+}
+
+.phone-stack{
+  width:100%;
+  height:100%;
+  position:relative;
+  min-height:650px;
+}
+
+.phone{
+  width:280px;
+  height:570px;
+  border:8px solid #292929;
+  border-radius:42px;
+  background:#fff;
+  overflow:hidden;
+  position:absolute;
+  box-shadow:0 35px 70px rgba(0,0,0,.45);
+}
+
+.phone.one{
+  left:14%;
+  top:80px;
+  transform:rotate(-8deg);
+}
+
+.phone.two{
+  right:11%;
+  top:125px;
+  transform:rotate(8deg);
+}
+
+.phone-top{
+  height:32px;
+  background:#000;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:9px;
+}
+
+.social-profile{
+  padding:17px;
+  color:#111;
+}
+
+.social-profile-head{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.social-avatar{
+  width:37px;
+  height:37px;
+  border-radius:50%;
+  background:var(--lime);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  font-size:10px;
+}
+
+.social-profile h5{
+  font-size:11px;
+}
+
+.social-profile small{
+  font-size:8px;
+  color:#777;
+}
+
+.mock-post{
+  margin-top:15px;
+  aspect-ratio:4/5;
+  background:#171717;
+  color:white;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:24px;
+}
+
+.mock-post small{
+  color:var(--lime);
+  letter-spacing:1px;
+}
+
+.mock-post h4{
+  font-family:"Manrope";
+  font-size:28px;
+  line-height:1;
+  margin:12px 0;
+}
+
+.mock-post.alt{
+  background:var(--lime);
+  color:#111;
+}
+
+.mock-post.alt small{
+  color:#111;
+}
+
+/* =========================
+   SHOOlINIANS
+========================= */
+
+.shoolinians{
+  background:#7657ff;
+  color:white;
+}
+
+.shoolinians .project-visual{
+  background:#d9d1ff;
+}
+
+.poster-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  transform:rotate(-4deg);
+}
+
+.poster{
+  width:230px;
+  height:300px;
+  padding:25px;
+  background:#fff;
+  color:#111;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+.poster:nth-child(2){
+  background:#111;
+  color:white;
+}
+
+.poster:nth-child(3){
+  background:var(--lime);
+}
+
+.poster:nth-child(4){
+  background:#ffb6d6;
+}
+
+.poster small{
+  font-size:9px;
+  letter-spacing:1px;
+}
+
+.poster h4{
+  font-family:"Manrope";
+  font-size:28px;
+  letter-spacing:-1px;
+  line-height:1;
+}
+
+/* =========================
+   JOURNEY SEEKER
+========================= */
+
+.journey{
+  background:#ff744d;
+  color:#111;
+}
+
+.journey .project-visual{
+  background:#ffc0ad;
+}
+
+.travel-window{
+  width:75%;
+  height:72%;
+  border-radius:220px 220px 20px 20px;
+  background:
+    linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.2)),
+    linear-gradient(180deg,#73b7ff 0%,#c6e5ff 40%,#df9c5c 41%,#c26f35 100%);
+  position:relative;
+  overflow:hidden;
+}
+
+.travel-window::after{
+  content:"JOURNEY\A SEEKER";
+  white-space:pre;
+  position:absolute;
+  bottom:40px;
+  left:40px;
+  font-family:"Manrope";
+  font-size:50px;
+  font-weight:800;
+  line-height:.85;
+  letter-spacing:-3px;
+  color:white;
+}
+
+.sun{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  background:#ffe66b;
+  position:absolute;
+  right:50px;
+  top:70px;
+}
+
+/* =========================
+   REEL
+========================= */
+
+.reel-project{
+  background:#111;
+  color:white;
+}
+
+.reel-project .project-visual{
+  background:#222;
+  padding:50px;
+}
+
+.reel-frame{
+  width:min(390px,100%);
+  min-height:600px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* =========================
+   RESULT STRIP
+========================= */
+
+.results{
+  background:var(--lime);
+  padding:80px 0;
+}
+
+.results-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.big-result{
+  font-family:"Manrope";
+  font-size:clamp(100px,16vw,220px);
+  font-weight:800;
+  line-height:.75;
+  letter-spacing:-12px;
+}
+
+.result-copy h3{
+  font-family:"Manrope";
+  font-size:38px;
+  letter-spacing:-2px;
+}
+
+.result-copy p{
+  max-width:520px;
+  margin-top:18px;
+  line-height:1.8;
+}
+
+/* =========================
+   CAPABILITIES
+========================= */
+
+.capabilities{
+  background:#111;
+  color:white;
+}
+
+.capabilities-head{
+  display:grid;
+  grid-template-columns:.5fr 1.5fr;
+  gap:80px;
+  margin-bottom:60px;
+}
+
+.capabilities h2{
+  font-size:clamp(50px,8vw,105px);
+}
+
+.capability{
+  display:grid;
+  grid-template-columns:100px 1fr 1fr;
+  gap:40px;
+  border-top:1px solid #333;
+  padding:32px 0;
+}
+
+.capability:last-child{
+  border-bottom:1px solid #333;
+}
+
+.capability-number{
+  color:var(--lime);
+  font-size:11px;
+}
+
+.capability h3{
+  font-family:"Manrope";
+  font-size:27px;
+}
+
+.capability p{
+  color:#888;
+  line-height:1.7;
+  font-size:13px;
+}
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+.experience-title{
+  display:grid;
+  grid-template-columns:.5fr 1.5fr;
+  gap:80px;
+  margin-bottom:70px;
+}
+
+.experience-title h2{
+  font-size:clamp(50px,8vw,100px);
+}
+
+.job{
+  display:grid;
+  grid-template-columns:180px .8fr 1.2fr;
+  gap:40px;
+  border-top:1px solid var(--line);
+  padding:38px 0;
+}
+
+.job:last-child{
+  border-bottom:1px solid var(--line);
+}
+
+.job-date{
+  font-size:11px;
+  color:#777;
+}
+
+.job h3{
+  font-family:"Manrope";
+  font-size:25px;
+  line-height:1.1;
+}
+
+.job-company{
+  color:#777;
+  font-size:11px;
+  margin-top:8px;
+}
+
+.job p{
+  color:#666;
+  line-height:1.8;
+  font-size:13px;
+}
+
+/* =========================
+   RESEARCH
+========================= */
+
+.research{
+  background:#e1d9ff;
+}
+
+.research-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.research-card{
+  min-height:430px;
+  border-radius:25px;
+  padding:40px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.research-card:first-child{
+  background:#7657ff;
+  color:white;
+}
+
+.research-card:last-child{
+  background:#111;
+  color:white;
+}
+
+.research-card small{
+  letter-spacing:2px;
+}
+
+.research-card h3{
+  font-family:"Manrope";
+  font-size:clamp(35px,4vw,55px);
+  line-height:1;
+  letter-spacing:-2px;
+}
+
+.research-card p{
+  color:rgba(255,255,255,.65);
+  line-height:1.8;
+  max-width:500px;
+}
+
+/* =========================
+   EDUCATION
+========================= */
+
+.education-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.edu{
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:40px;
+}
+
+.edu small{
+  color:#777;
+}
+
+.edu h3{
+  font-family:"Manrope";
+  font-size:31px;
+  letter-spacing:-1px;
+  margin:40px 0 15px;
+}
+
+.edu p{
+  color:#666;
+}
+
+.certifications{
+  margin-top:70px;
+}
+
+.cert{
+  display:flex;
+  justify-content:space-between;
+  border-top:1px solid var(--line);
+  padding:20px 0;
+  font-size:13px;
+}
+
+.cert:last-child{
+  border-bottom:1px solid var(--line);
+}
+
+.cert span:last-child{
+  color:#888;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+  background:var(--lime);
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+}
+
+.contact h2{
+  font-size:clamp(70px,12vw,165px);
+}
+
+.contact h2 span{
+  display:block;
+}
+
+.contact h2 .outline{
+  color:transparent;
+  -webkit-text-stroke:2px #111;
+}
+
+.contact-bottom{
+  margin-top:60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:50px;
+}
+
+.contact-email{
+  font-family:"Manrope";
+  font-size:clamp(22px,3vw,38px);
+  font-weight:700;
+  border-bottom:3px solid #111;
+}
+
+.contact-links{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:#111;
+  color:#777;
+  padding:30px 0;
+}
+
+.footer{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  font-size:10px;
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:900px){
 
-    .nav-links,
-    .nav-button{
-        display:none;
-    }
+  .nav-links,
+  .nav-cta{
+    display:none;
+  }
 
-    .menu-button{
-        display:block;
-    }
+  .menu{
+    display:block;
+  }
 
-    .nav-links.open{
-        display:flex;
-        position:absolute;
-        top:65px;
-        left:4%;
-        width:92%;
-        flex-direction:column;
-        align-items:flex-start;
-        padding:25px;
-        background:#101010;
-        border:1px solid var(--line);
-        border-radius:20px;
-    }
+  .nav-links.open{
+    display:flex;
+    position:absolute;
+    flex-direction:column;
+    align-items:flex-start;
+    top:65px;
+    left:4%;
+    width:92%;
+    background:var(--paper);
+    padding:25px;
+    border-radius:20px;
+    border:1px solid var(--line);
+  }
 
-    .hero-title{
-        letter-spacing:-5px;
-    }
+  .hero h1{
+    letter-spacing:-5px;
+  }
 
-    .hero-lower,
-    .about-main,
-    .featured-top,
-    .reel-grid{
-        grid-template-columns:1fr;
-    }
+  .hero-bottom,
+  .intro-grid,
+  .intro-copy,
+  .project-inner,
+  .results-grid,
+  .capabilities-head,
+  .experience-title{
+    grid-template-columns:1fr;
+  }
 
-    .hero-details{
-        border-left:0;
-        border-top:1px solid var(--line);
-        padding:25px 0 0;
-    }
+  .project-inner{
+    min-height:auto;
+  }
 
-    .section{
-        padding:90px 0;
-    }
+  .project-copy{
+    min-height:550px;
+    padding:40px;
+  }
 
-    .section-heading,
-    .about-layout{
-        grid-template-columns:1fr;
-        gap:15px;
-    }
+  .phone-stack{
+    min-height:600px;
+  }
 
-    .section-heading h2{
-        letter-spacing:-3px;
-    }
+  .poster-grid{
+    padding:70px 0;
+  }
 
-    .stats,
-    .snapshot-grid,
-    .performance-grid{
-        grid-template-columns:1fr 1fr;
-    }
+  .job,
+  .capability{
+    grid-template-columns:1fr;
+    gap:15px;
+  }
 
-    .job-top{
-        grid-template-columns:1fr;
-        gap:10px;
-    }
+  .research-grid,
+  .education-grid{
+    grid-template-columns:1fr;
+  }
 
-    .job-body{
-        margin-left:0;
-        grid-template-columns:1fr;
-        gap:30px;
-    }
-
-    .work-intro{
-        margin:-30px 0 50px;
-    }
-
-    .preview-panel{
-        border-left:0;
-        border-top:1px solid var(--line);
-    }
-
-    .work-grid,
-    .skills-grid,
-    .education-grid{
-        grid-template-columns:1fr;
-    }
-
-    .project{
-        grid-template-columns:1fr;
-        gap:15px;
-    }
-
+  .contact-bottom{
+    flex-direction:column;
+    align-items:flex-start;
+  }
 }
 
 @media(max-width:600px){
 
-    .hero-title{
-        letter-spacing:-4px;
-    }
+  .section{
+    padding:85px 0;
+  }
 
-    .stats,
-    .snapshot-grid,
-    .performance-grid{
-        grid-template-columns:1fr;
-    }
+  .hero h1{
+    letter-spacing:-4px;
+  }
 
-    .stat{
-        border-right:0;
-        border-bottom:1px solid var(--line);
-    }
+  .hero-meta{
+    grid-template-columns:1fr;
+  }
 
-    .stat:last-child{
-        border-bottom:0;
-    }
+  .work-heading{
+    flex-direction:column;
+    align-items:flex-start;
+  }
 
-    .featured-info,
-    .reel-showcase{
-        padding:28px;
-    }
+  .project-copy{
+    min-height:500px;
+    padding:30px;
+  }
 
-    .preview-panel{
-        min-height:430px;
-        padding:25px;
-    }
+  .phone{
+    width:205px;
+    height:440px;
+  }
 
-    .fake-post-content h4{
-        font-size:27px;
-    }
+  .phone.one{
+    left:3%;
+  }
 
-    .contact h2{
-        letter-spacing:-5px;
-    }
+  .phone.two{
+    right:3%;
+  }
 
-    .footer{
-        flex-direction:column;
-    }
+  .poster{
+    width:150px;
+    height:220px;
+  }
 
+  .poster h4{
+    font-size:20px;
+  }
+
+  .result-badge{
+    width:130px;
+    height:130px;
+    right:15px;
+    top:20px;
+  }
+
+  .result-badge strong{
+    font-size:38px;
+  }
+
+  .big-result{
+    letter-spacing:-7px;
+  }
+
+  .footer{
+    flex-direction:column;
+  }
 }
 
 </style>
@@ -1281,95 +1215,86 @@ footer{
 
 <body>
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+<!-- NAV -->
 
-<div class="nav-shell">
-
-<nav class="nav">
+<div class="nav-wrap">
+<nav>
 
 <a href="#home" class="logo">
 PRANJAL<span>.</span>
 </a>
 
 <ul class="nav-links" id="navLinks">
-<li><a href="#about">About</a></li>
-<li><a href="#experience">Experience</a></li>
 <li><a href="#work">Work</a></li>
+<li><a href="#capabilities">Capabilities</a></li>
+<li><a href="#experience">Experience</a></li>
 <li><a href="#research">Research</a></li>
-<li><a href="#skills">Skills</a></li>
 </ul>
 
-<a href="#contact" class="nav-button">
-Let's talk ↗
-</a>
+<a href="#contact" class="nav-cta">Let's talk ↗</a>
 
-<button class="menu-button" onclick="toggleMenu()" aria-label="Menu">
-☰
-</button>
+<button class="menu" onclick="toggleMenu()">☰</button>
 
 </nav>
-
 </div>
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- HERO -->
 
 <header class="hero" id="home">
 
-<div class="hero-orb"></div>
-
 <div class="container">
 
-<div class="availability">
-<span class="dot"></span>
-Marketing professional based in the UAE
+<div class="hero-label">
+<span class="hero-dot"></span>
+Pranjal Thakur • Marketing Professional • UAE
 </div>
 
-<h1 class="hero-title">
-MARKETING,<br>
-<span class="stroke">BUT MAKE IT</span><br>
-<span class="green">MEASURABLE.</span>
+<h1 class="display">
+
+<span>I TURN</span>
+
+<span class="soft">
+ATTENTION
+</span>
+
+<span>
+INTO <span class="highlight">GROWTH.</span>
+</span>
+
 </h1>
 
-<div class="hero-lower">
+
+<div class="hero-bottom">
 
 <div>
 
 <p class="hero-copy">
 
-I'm <strong>Pranjal Thakur</strong>, a marketing professional
-with experience across digital marketing, performance marketing,
-social media, market research, lead generation, client communication
-and campaign management.
+I'm <strong>Pranjal Thakur</strong> — a marketing professional
+working across digital marketing, performance marketing,
+social media, market research and lead generation.
 
 <br><br>
 
-I enjoy combining <strong>creative thinking, customer insight
-and performance data</strong> to build marketing that supports
-real business growth.
+My approach combines <strong>creative communication with
+commercial thinking</strong>: understand the audience,
+build the message, execute across digital channels and
+measure what happens next.
 
 </p>
+
 
 <div class="hero-actions">
 
-<a href="#work" class="button button-primary">
-See my work ↓
-</a>
-
-<a href="#experience" class="button button-secondary">
-Experience
+<a href="#work" class="btn btn-dark">
+View selected work ↓
 </a>
 
 <a
-href="https://www.linkedin.com/in/pranjal-thakur-4573631b1"
-target="_blank"
-rel="noopener"
-class="button button-secondary">
-LinkedIn ↗
+href="mailto:pranjalm008@gmail.com"
+class="btn">
+Contact me ↗
 </a>
 
 </div>
@@ -1377,20 +1302,27 @@ LinkedIn ↗
 </div>
 
 
-<div class="hero-details">
+<div class="hero-meta">
 
-<div class="hero-details-label">
-FOCUS
+<div class="meta-box">
+<small>BASED IN</small>
+<strong>UAE</strong>
 </div>
 
-<p>
-<strong>Digital Marketing</strong><br>
-Performance Marketing<br>
-Social Media<br>
-Market Research<br>
-Lead Generation<br>
-Brand Strategy
-</p>
+<div class="meta-box">
+<small>EXPERIENCE</small>
+<strong>3+ Years</strong>
+</div>
+
+<div class="meta-box">
+<small>FOCUS</small>
+<strong>Digital Growth</strong>
+</div>
+
+<div class="meta-box">
+<small>BACKGROUND</small>
+<strong>MBA</strong>
+</div>
 
 </div>
 
@@ -1401,117 +1333,71 @@ Brand Strategy
 </header>
 
 
-<!-- =====================================================
-     MARQUEE
-===================================================== -->
+<!-- STRIP -->
 
-<div class="marquee">
+<div class="strip">
 
-<div class="marquee-inner">
+<div class="strip-track">
 
-<span>DIGITAL MARKETING</span><b>✦</b>
-<span>PERFORMANCE</span><b>✦</b>
 <span>SOCIAL MEDIA</span><b>✦</b>
+<span>PERFORMANCE MARKETING</span><b>✦</b>
 <span>SEO</span><b>✦</b>
 <span>PPC</span><b>✦</b>
 <span>MARKET RESEARCH</span><b>✦</b>
 <span>LEAD GENERATION</span><b>✦</b>
 <span>CONTENT</span><b>✦</b>
+<span>BRAND STRATEGY</span><b>✦</b>
 
-<span>DIGITAL MARKETING</span><b>✦</b>
-<span>PERFORMANCE</span><b>✦</b>
 <span>SOCIAL MEDIA</span><b>✦</b>
+<span>PERFORMANCE MARKETING</span><b>✦</b>
 <span>SEO</span><b>✦</b>
 <span>PPC</span><b>✦</b>
 <span>MARKET RESEARCH</span><b>✦</b>
 <span>LEAD GENERATION</span><b>✦</b>
 <span>CONTENT</span><b>✦</b>
+<span>BRAND STRATEGY</span><b>✦</b>
 
 </div>
 
 </div>
 
 
-<!-- =====================================================
-     ABOUT
-===================================================== -->
+<!-- INTRO -->
 
-<section class="section about" id="about">
+<section class="section intro">
 
 <div class="container">
 
-<div class="section-heading reveal">
+<div class="intro-grid reveal">
 
-<div class="section-index">
-01 / ABOUT
+<div class="eyebrow">
+WHAT I DO
 </div>
-
-<h2>
-I DON'T JUST<br>
-<span class="grey">POST CONTENT.</span>
-</h2>
-
-</div>
-
-
-<div class="about-layout reveal">
-
-<div></div>
 
 <div>
 
-<div class="about-main">
+<h2 class="display">
 
-<div class="about-statement">
+CREATIVE<br>
+<span>WITH A REASON.</span>
 
-I look at the whole picture —
-<span>audience, market, message, channel and performance.</span>
+</h2>
 
-</div>
-
-<div class="about-copy">
+<div class="intro-copy">
 
 <p>
-My professional background combines digital marketing,
-performance marketing, market research, lead generation,
-client communication and sales support.
+I don't see marketing as simply posting content.
+I start with the <strong>market, audience and business
+objective</strong>, then decide what the communication
+needs to do.
 </p>
 
 <p>
-That means I approach marketing from both sides:
-the creative side that earns attention and the analytical
-side that asks whether the activity is actually helping
-the business.
+My experience covers social media, digital campaigns,
+SEO, PPC, market research, competitor analysis,
+lead generation, website management and client
+communication.
 </p>
-
-<p>
-My work has included website management, SEO, PPC,
-social media marketing, content marketing, competitor
-research, KPI monitoring, client communication and
-business-development support.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="stats">
-
-<div class="stat">
-<strong>3<span>+</span></strong>
-<p>Years across marketing, research & sales</p>
-</div>
-
-<div class="stat">
-<strong>4<span>+</span></strong>
-<p>Professional marketing experiences</p>
-</div>
-
-<div class="stat">
-<strong>360<span>°</span></strong>
-<p>Research → Strategy → Execution → Analysis</p>
-</div>
 
 </div>
 
@@ -1524,501 +1410,186 @@ business-development support.
 </section>
 
 
-<!-- =====================================================
-     CAREER SNAPSHOT
-===================================================== -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="section-heading reveal">
-
-<div class="section-index">
-02 / SNAPSHOT
-</div>
-
-<h2>
-HOW I THINK<br>
-<span class="grey">ABOUT MARKETING.</span>
-</h2>
-
-</div>
-
-
-<div class="snapshot-grid reveal">
-
-<div class="snapshot-card">
-
-<span class="snapshot-number">01</span>
-
-<h3>
-Understand<br>the market.
-</h3>
-
-<p>
-Research the audience, competitors, trends and business
-environment before deciding what the message should be.
-</p>
-
-</div>
-
-
-<div class="snapshot-card">
-
-<span class="snapshot-number">02</span>
-
-<h3>
-Build the<br>strategy.
-</h3>
-
-<p>
-Translate insights into channel, content and campaign
-decisions that support clear business objectives.
-</p>
-
-</div>
-
-
-<div class="snapshot-card">
-
-<span class="snapshot-number">03</span>
-
-<h3>
-Execute the<br>idea.
-</h3>
-
-<p>
-Turn strategy into digital campaigns, content,
-social communication and online brand activity.
-</p>
-
-</div>
-
-
-<div class="snapshot-card">
-
-<span class="snapshot-number">04</span>
-
-<h3>
-Measure &<br>improve.
-</h3>
-
-<p>
-Monitor KPIs, campaign performance, competitors and
-customer response to continuously improve execution.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     DETAILED EXPERIENCE
-===================================================== -->
-
-<section class="section experience" id="experience">
-
-<div class="container">
-
-<div class="section-heading reveal">
-
-<div class="section-index">
-03 / EXPERIENCE
-</div>
-
-<h2>
-EXPERIENCE,<br>
-<span class="grey">IN DETAIL.</span>
-</h2>
-
-</div>
-
-
-<!-- JOB 1 -->
-
-<article class="job reveal">
-
-<div class="job-top">
-
-<div class="job-date">
-MAY 2025 — AUG 2026
-</div>
-
-<div>
-
-<div class="job-company">
-New Malik Transportation SPC. LLC.
-</div>
-
-<h3 class="job-title">
-Marketing Manager
-</h3>
-
-</div>
-
-</div>
-
-
-<div class="job-body">
-
-<p class="job-summary">
-
-Managed marketing activities with a focus on strengthening
-the company's online presence and supporting business growth.
-
-I managed website content, developed marketing strategies,
-handled client communication and worked with internal teams
-to keep marketing aligned with wider company objectives.
-
-The role also exposed me to the operational side of the
-business through basic accounts support, including invoice
-preparation, expense tracking, payment follow-ups and
-financial record maintenance.
-
-</p>
-
-
-<div class="job-points">
-
-<div class="job-point">Website management</div>
-<div class="job-point">Brand visibility strategy</div>
-<div class="job-point">Client communication</div>
-<div class="job-point">Relationship management</div>
-<div class="job-point">Internal coordination</div>
-<div class="job-point">Invoice preparation</div>
-<div class="job-point">Expense tracking</div>
-<div class="job-point">Payment follow-ups</div>
-
-</div>
-
-</div>
-
-</article>
-
-
-<!-- JOB 2 -->
-
-<article class="job reveal">
-
-<div class="job-top">
-
-<div class="job-date">
-NOV 2024 — MAR 2025
-</div>
-
-<div>
-
-<div class="job-company">
-CROGEEKS
-</div>
-
-<h3 class="job-title">
-Performance Marketer
-</h3>
-
-</div>
-
-</div>
-
-
-<div class="job-body">
-
-<p class="job-summary">
-
-Worked across multiple areas of digital marketing including
-SEO, PPC advertising, social media and content marketing.
-
-Market research and competitor analysis were used to better
-understand industry trends and customer preferences, helping
-inform campaign decisions.
-
-I also monitored key performance indicators to evaluate
-digital activity, optimize online presence and improve
-the user experience.
-
-</p>
-
-
-<div class="job-points">
-
-<div class="job-point">SEO</div>
-<div class="job-point">PPC advertising</div>
-<div class="job-point">Social media marketing</div>
-<div class="job-point">Content marketing</div>
-<div class="job-point">Market research</div>
-<div class="job-point">Competitor analysis</div>
-<div class="job-point">Industry trend analysis</div>
-<div class="job-point">KPI monitoring</div>
-
-</div>
-
-</div>
-
-</article>
-
-
-<!-- JOB 3 -->
-
-<article class="job reveal">
-
-<div class="job-top">
-
-<div class="job-date">
-AUG 2022 — AUG 2024
-</div>
-
-<div>
-
-<div class="job-company">
-YSM Constructions
-</div>
-
-<h3 class="job-title">
-Market Research & Sales
-</h3>
-
-</div>
-
-</div>
-
-
-<div class="job-body">
-
-<p class="job-summary">
-
-Developed and maintained relationships with key industry
-contacts to gather market intelligence and support
-business planning.
-
-I created detailed market reports and presentations for
-sales and business planning and supported the full
-sales process from lead generation through after-sales.
-
-I also played a role in the process that helped the
-business secure a contract with a major client.
-
-</p>
-
-
-<div class="job-points">
-
-<div class="job-point">Market intelligence</div>
-<div class="job-point">Industry relationships</div>
-<div class="job-point">Market reports</div>
-<div class="job-point">Business presentations</div>
-<div class="job-point">Lead generation</div>
-<div class="job-point">Sales support</div>
-<div class="job-point">After-sales support</div>
-<div class="job-point">Client development</div>
-
-</div>
-
-</div>
-
-</article>
-
-
-<!-- JOB 4 -->
-
-<article class="job reveal">
-
-<div class="job-top">
-
-<div class="job-date">
-JUN 2023 — AUG 2023
-</div>
-
-<div>
-
-<div class="job-company">
-CROGEEKS
-</div>
-
-<h3 class="job-title">
-Digital Marketing Intern
-</h3>
-
-</div>
-
-</div>
-
-
-<div class="job-body">
-
-<p class="job-summary">
-
-Built practical digital marketing experience across SEO,
-PPC advertising, social media and content marketing.
-
-Supported campaign execution, marketing research and
-activities designed to improve online presence.
-
-The internship gave me hands-on exposure to the digital
-marketing disciplines that later became part of my
-performance marketing work.
-
-</p>
-
-
-<div class="job-points">
-
-<div class="job-point">SEO fundamentals</div>
-<div class="job-point">PPC advertising</div>
-<div class="job-point">Social media</div>
-<div class="job-point">Content marketing</div>
-<div class="job-point">Campaign execution</div>
-<div class="job-point">Marketing research</div>
-
-</div>
-
-</div>
-
-</article>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     SELECTED SOCIAL WORK
-===================================================== -->
+<!-- WORK -->
 
 <section class="section" id="work">
 
 <div class="container">
 
-<div class="section-heading reveal">
+<div class="work-heading reveal">
 
-<div class="section-index">
-04 / SELECTED WORK
+<div>
+
+<div class="eyebrow">
+SELECTED WORK / 2022—2026
 </div>
 
-<h2>
-THE WORK<br>
-<span class="grey">SHOULD BE SEEN.</span>
+<h2 class="display">
+WORK THAT<br>
+HAS A JOB.
 </h2>
 
 </div>
 
-
-<p class="work-intro reveal">
-
-These are selected social media pages and content I have
-worked on. Instead of hiding them behind a résumé bullet,
-this section gives the work its own space and lets recruiters
-open the live Instagram presence directly.
-
+<p>
+Selected social media, digital marketing and content
+work — presented around the business or communication
+objective rather than simply as a gallery.
 </p>
 
+</div>
 
-<!-- SHOOlINI FEATURE -->
 
-<div class="featured-work reveal">
+<!-- PROJECT 01 -->
 
-<div class="featured-top">
+<article class="project shoolini reveal">
 
-<div class="featured-info">
+<div class="project-inner">
+
+<div class="project-copy">
 
 <div>
 
-<span class="work-label">
-SOCIAL MEDIA / EDUCATION
-</span>
+<div class="project-category">
+01 / EDUCATION MARKETING
+</div>
 
 <h3>
-Shoolini<br>
-University
+TURNING<br>
+ATTENTION<br>
+INTO<br>
+ADMISSIONS.
 </h3>
 
 <p>
-Selected social media work connected with Shoolini
-University's Instagram presence. The work sits within
-a large education brand environment where social content
-needs to communicate university life, community and
-institutional identity to a digital audience.
+Selected social media and digital content work for
+Shoolini University, supporting its wider digital
+presence, student communication and admissions
+marketing activity.
 </p>
 
-<div class="tags">
-<span class="tag">Social Media</span>
-<span class="tag">Content</span>
-<span class="tag">Education</span>
-<span class="tag">Digital Communication</span>
+<div class="project-tags">
+<span>Social Media</span>
+<span>Education Marketing</span>
+<span>Content</span>
+<span>Student Engagement</span>
+<span>Digital Communication</span>
 </div>
 
 </div>
 
-
-<div class="featured-action">
 
 <a
 href="https://www.instagram.com/shooliniuniversity"
 target="_blank"
-rel="noopener"
-class="button button-primary">
-Explore live account ↗
+class="project-link">
+
+<span>SHOOLINI UNIVERSITY</span>
+<b>↗</b>
+
 </a>
 
 </div>
 
+
+<div class="project-visual">
+
+<div class="result-badge">
+
+<strong>+30%</strong>
+
+<span>
+ADMISSIONS
+GROWTH
+</span>
+
 </div>
 
 
-<div class="preview-panel">
+<div class="phone-stack">
 
-<div class="instagram-ui">
 
-<div class="instagram-head">
+<div class="phone one">
 
-<div class="instagram-account">
+<div class="phone-top">
+Instagram
+</div>
 
-<div class="avatar">
+<div class="social-profile">
+
+<div class="social-profile-head">
+
+<div class="social-avatar">
 SU
 </div>
 
-<div class="instagram-name">
-<strong>shooliniuniversity</strong><br>
-<span style="color:#555">Instagram</span>
-</div>
+<div>
+
+<h5>shooliniuniversity</h5>
+<small>University • Education</small>
 
 </div>
 
-<div style="color:#666">•••</div>
-
 </div>
 
 
-<div class="fake-post">
+<div class="mock-post">
 
-<div class="fake-post-content">
-
-<small>SELECTED WORK</small>
+<small>SHOOLINI UNIVERSITY</small>
 
 <h4>
-SOCIAL<br>
-MEDIA
+WHERE<br>
+FUTURES<br>
+BEGIN.
 </h4>
 
-<p>
-Open the live Instagram account to explore
-the published content.
+<p style="font-size:9px;color:#999;">
+Social media • Student communication
 </p>
 
 </div>
 
 </div>
 
+</div>
 
-<div class="instagram-actions">
 
-<span>♡ &nbsp; ◯ &nbsp; ↗</span>
-<span>▢</span>
+<div class="phone two">
+
+<div class="phone-top">
+Instagram
+</div>
+
+<div class="social-profile">
+
+<div class="social-profile-head">
+
+<div class="social-avatar">
+SU
+</div>
+
+<div>
+
+<h5>shooliniuniversity</h5>
+<small>Student Life</small>
+
+</div>
+
+</div>
+
+
+<div class="mock-post alt">
+
+<small>STUDENT EXPERIENCE</small>
+
+<h4>
+MORE THAN<br>
+A CAMPUS.
+</h4>
+
+<p style="font-size:9px;">
+Community • Education • Experience
+</p>
 
 </div>
 
@@ -2026,161 +1597,305 @@ the published content.
 
 </div>
 
+
+</div>
+
 </div>
 
 </div>
 
+</article>
 
-<!-- OTHER WORK -->
 
-<div class="work-grid reveal">
+<!-- RESULTS -->
+
+<section class="results reveal">
+
+<div class="container">
+
+<div class="results-grid">
+
+<div class="big-result">
+30%
+</div>
+
+<div class="result-copy">
+
+<div class="eyebrow">
+SHOOLINI UNIVERSITY
+</div>
+
+<h3>
+Growth in admissions
+</h3>
+
+<p>
+Admissions increased by approximately 30% during
+the period associated with this work, alongside
+the university's wider marketing and admissions
+activity.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<br><br>
+
+
+<!-- PROJECT 02 -->
+
+<article class="project shoolinians reveal">
+
+<div class="project-inner">
+
+<div class="project-copy">
+
+<div>
+
+<div class="project-category">
+02 / COMMUNITY CONTENT
+</div>
+
+<h3>
+BUILDING<br>
+A DIGITAL<br>
+CAMPUS<br>
+COMMUNITY.
+</h3>
+
+<p>
+Selected social media work connected with
+Shoolinians For You — content designed around
+student communication, community and university
+life.
+</p>
+
+<div class="project-tags">
+<span>Community</span>
+<span>Social Media</span>
+<span>Content</span>
+<span>Student Life</span>
+</div>
+
+</div>
 
 
 <a
 href="https://www.instagram.com/shooliniansforyou"
 target="_blank"
-rel="noopener"
-class="work-card">
+class="project-link">
+
+<span>SHOOLINIANS FOR YOU</span>
+<b>↗</b>
+
+</a>
+
+</div>
+
+
+<div class="project-visual">
+
+<div class="poster-grid">
+
+<div class="poster">
+
+<small>SHOOLINIANS</small>
+
+<h4>
+CAMPUS<br>
+STORIES.
+</h4>
+
+<span>01</span>
+
+</div>
+
+
+<div class="poster">
+
+<small>COMMUNITY</small>
+
+<h4>
+MADE FOR<br>
+STUDENTS.
+</h4>
+
+<span>02</span>
+
+</div>
+
+
+<div class="poster">
+
+<small>STUDENT LIFE</small>
+
+<h4>
+BEYOND THE<br>
+CLASSROOM.
+</h4>
+
+<span>03</span>
+
+</div>
+
+
+<div class="poster">
+
+<small>CONTENT</small>
+
+<h4>
+PEOPLE.<br>
+MOMENTS.<br>
+STORIES.
+</h4>
+
+<span>04</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PROJECT 03 -->
+
+<article class="project journey reveal">
+
+<div class="project-inner">
+
+<div class="project-copy">
 
 <div>
 
-<div class="work-card-number">
-PROJECT / 02
-</div>
-
-<div class="work-symbol">
-S+
+<div class="project-category">
+03 / TRAVEL CONTENT
 </div>
 
 <h3>
-Shoolinians<br>
-For You
+MAKING<br>
+PEOPLE<br>
+WANT TO<br>
+GO.
 </h3>
 
 <p>
-Selected social media work for the Shoolinians For You
-Instagram presence, focused on digital communication
-and community-oriented social content.
+Selected social media work connected with Journey
+Seeker, focused on travel content, visual storytelling
+and destination-led digital communication.
 </p>
 
-<div class="tags">
-<span class="tag">Social</span>
-<span class="tag">Community</span>
-<span class="tag">Content</span>
+<div class="project-tags">
+<span>Travel</span>
+<span>Social Media</span>
+<span>Visual Storytelling</span>
+<span>Content</span>
 </div>
 
 </div>
-
-<div class="work-card-footer">
-<span>OPEN LIVE WORK</span>
-<b>↗</b>
-</div>
-
-</a>
 
 
 <a
 href="https://www.instagram.com/journeyseeker_"
 target="_blank"
-rel="noopener"
-class="work-card">
+class="project-link">
 
-<div>
-
-<div class="work-card-number">
-PROJECT / 03
-</div>
-
-<div class="work-symbol">
-JS
-</div>
-
-<h3>
-Journey<br>
-Seeker
-</h3>
-
-<p>
-Selected work connected with a travel-focused Instagram
-presence, bringing together social media, visual content
-and travel-oriented digital storytelling.
-</p>
-
-<div class="tags">
-<span class="tag">Travel</span>
-<span class="tag">Social Media</span>
-<span class="tag">Visual Content</span>
-</div>
-
-</div>
-
-<div class="work-card-footer">
-<span>OPEN LIVE WORK</span>
+<span>JOURNEY SEEKER</span>
 <b>↗</b>
-</div>
 
 </a>
 
 </div>
 
 
-<!-- REAL INSTAGRAM REEL -->
+<div class="project-visual">
 
-<div class="reel-showcase reveal">
+<div class="travel-window">
 
-<div class="reel-grid">
+<div class="sun"></div>
 
-<div class="reel-info">
+</div>
 
-<span class="work-label">
-SHORT-FORM CONTENT / REEL
-</span>
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PROJECT 04 / REAL REEL -->
+
+<article class="project reel-project reveal">
+
+<div class="project-inner">
+
+<div class="project-copy">
+
+<div>
+
+<div class="project-category">
+04 / SHORT-FORM CONTENT
+</div>
 
 <h3>
-Selected<br>
-Reel
+STOP<br>
+THE<br>
+SCROLL.
 </h3>
 
 <p>
-A direct example of short-form Instagram content from
-the work you've provided for this portfolio.
-
-Instead of only linking to it, the live Instagram post
-is embedded here so recruiters can see the actual
-content directly inside the portfolio when Instagram's
-embed service is available.
+A selected example of short-form social media content.
+The live Instagram reel is embedded directly into the
+portfolio so the work can be viewed without treating
+this page like a résumé.
 </p>
 
-<div class="tags">
-<span class="tag">Instagram</span>
-<span class="tag">Reel</span>
-<span class="tag">Short-form Content</span>
+<div class="project-tags">
+<span>Instagram</span>
+<span>Reel</span>
+<span>Short-form</span>
+<span>Social Content</span>
 </div>
 
-<br><br>
+</div>
+
 
 <a
 href="https://www.instagram.com/reel/DZwMlgaz8KN/"
 target="_blank"
-rel="noopener"
-class="button button-primary">
-Watch on Instagram ↗
+class="project-link">
+
+<span>WATCH ON INSTAGRAM</span>
+<b>↗</b>
+
 </a>
 
 </div>
 
 
-<div class="reel-embed">
+<div class="project-visual">
+
+<div class="reel-frame">
 
 <blockquote
 class="instagram-media"
 data-instgrm-permalink="https://www.instagram.com/reel/DZwMlgaz8KN/"
 data-instgrm-version="14"
 style="
-background:#111;
+background:#fff;
 border:0;
 margin:0;
-max-width:430px;
+max-width:390px;
 min-width:280px;
 width:100%;
 ">
@@ -2192,174 +1907,29 @@ width:100%;
 
 </div>
 
-</div>
+</article>
 
-</section>
-
-
-<!-- =====================================================
-     PERFORMANCE MARKETING
-===================================================== -->
-
-<section class="section performance">
-
-<div class="container">
-
-<div class="section-heading reveal">
-
-<div class="section-index">
-05 / PERFORMANCE
-</div>
-
-<h2>
-CREATIVE,<br>
-<span class="grey">MEET DATA.</span>
-</h2>
-
-</div>
-
-
-<div class="performance-grid reveal">
-
-
-<div class="performance-card">
-
-<div class="performance-icon">
-01
-</div>
-
-<h3>
-Search & PPC
-</h3>
-
-<p>
-Hands-on experience with PPC advertising and digital
-campaign activity, combined with an understanding of
-search marketing and the role paid channels play in
-driving targeted traffic.
-</p>
-
-</div>
-
-
-<div class="performance-card">
-
-<div class="performance-icon">
-02
-</div>
-
-<h3>
-SEO
-</h3>
-
-<p>
-Experience working with search engine optimization as
-part of broader digital marketing activity, supporting
-online presence and discoverability.
-</p>
-
-</div>
-
-
-<div class="performance-card">
-
-<div class="performance-icon">
-03
-</div>
-
-<h3>
-KPI Monitoring
-</h3>
-
-<p>
-Monitored key performance indicators to understand
-campaign and digital performance and support ongoing
-optimization decisions.
-</p>
-
-</div>
-
-
-<div class="performance-card">
-
-<div class="performance-icon">
-04
-</div>
-
-<h3>
-Competitor Research
-</h3>
-
-<p>
-Analyzed competitors and industry trends to understand
-the wider market environment and support more informed
-marketing decisions.
-</p>
-
-</div>
-
-
-<div class="performance-card">
-
-<div class="performance-icon">
-05
-</div>
-
-<h3>
-Content Marketing
-</h3>
-
-<p>
-Experience supporting content marketing and social
-media activity as part of an integrated approach to
-digital brand presence.
-</p>
-
-</div>
-
-
-<div class="performance-card">
-
-<div class="performance-icon">
-06
-</div>
-
-<h3>
-Market Insight
-</h3>
-
-<p>
-Applied market research findings to campaign thinking,
-helping align digital activity with industry trends and
-customer preferences.
-</p>
-
-</div>
-
-</div>
 
 </div>
 
 </section>
 
 
-<!-- =====================================================
-     RESEARCH
-===================================================== -->
+<!-- CAPABILITIES -->
 
-<section class="section" id="research">
+<section class="section capabilities" id="capabilities">
 
 <div class="container">
 
-<div class="section-heading reveal">
+<div class="capabilities-head reveal">
 
-<div class="section-index">
-06 / PROJECTS
+<div class="eyebrow">
+CAPABILITIES
 </div>
 
-<h2>
-RESEARCH BEFORE<br>
-<span class="grey">ASSUMPTIONS.</span>
+<h2 class="display">
+FROM INSIGHT<br>
+TO EXECUTION.
 </h2>
 
 </div>
@@ -2367,214 +1937,117 @@ RESEARCH BEFORE<br>
 
 <div class="reveal">
 
-<div class="project">
 
-<div class="project-number">
+<div class="capability">
+
+<div class="capability-number">
 01
 </div>
-
-<h3>
-Social Media,
-Influencers &
-Travel Behaviour
-</h3>
-
-<p>
-Research project analyzing whether social media posts
-and travel influencer vlogs impact the travel behaviour
-and purchase choices of urban Indians.
-
-The project explored the relationship between digital
-content, influencer communication and consumer
-decision-making within the travel category.
-</p>
-
-</div>
-
-
-<div class="project">
-
-<div class="project-number">
-02
-</div>
-
-<h3>
-SHEHAAT
-</h3>
-
-<p>
-A live project studying SHEHAAT, a rural women-led
-business promoting women's empowerment.
-
-The project provided exposure to a purpose-driven
-business model and offered an opportunity to study
-business activity within a social-impact context.
-</p>
-
-</div>
-
-
-<div class="project">
-
-<div class="project-number">
-03
-</div>
-
-<h3>
-Professional
-Market Intelligence
-</h3>
-
-<p>
-During my work at YSM Constructions, market research
-was not limited to academic analysis. I maintained
-industry relationships, gathered market intelligence
-and translated findings into reports and presentations
-used for business and sales planning.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     SKILLS
-===================================================== -->
-
-<section class="section skills" id="skills">
-
-<div class="container">
-
-<div class="section-heading reveal">
-
-<div class="section-index">
-07 / SKILLS
-</div>
-
-<h2>
-THE<br>
-<span class="grey">TOOLKIT.</span>
-</h2>
-
-</div>
-
-
-<div class="skills-grid reveal">
-
-
-<div class="skill-card">
-
-<span class="skill-number">01</span>
 
 <h3>
 Digital Marketing
 </h3>
 
-<div class="skill-items">
-<span>Digital Marketing</span>
-<span>SEO</span>
-<span>PPC</span>
-<span>Google Ads</span>
-<span>Website Management</span>
-<span>Online Presence</span>
-</div>
+<p>
+Digital strategy, website management, online presence,
+campaign execution and digital communication designed
+around business objectives.
+</p>
 
 </div>
 
 
-<div class="skill-card">
+<div class="capability">
 
-<span class="skill-number">02</span>
+<div class="capability-number">
+02
+</div>
 
 <h3>
-Social & Content
+Performance Marketing
 </h3>
 
-<div class="skill-items">
-<span>Social Media Marketing</span>
-<span>Content Marketing</span>
-<span>Campaign Management</span>
-<span>Digital Communication</span>
-<span>Brand Visibility</span>
-</div>
+<p>
+Experience with PPC, Google Ads, KPI monitoring,
+campaign optimization and using performance data
+to support better marketing decisions.
+</p>
 
 </div>
 
 
-<div class="skill-card">
+<div class="capability">
 
-<span class="skill-number">03</span>
+<div class="capability-number">
+03
+</div>
 
 <h3>
-Research & Strategy
+Social Media
 </h3>
 
-<div class="skill-items">
-<span>Market Research</span>
-<span>Competitor Analysis</span>
-<span>Industry Trends</span>
-<span>Brand Strategy</span>
-<span>Market Intelligence</span>
-<span>KPI Monitoring</span>
-</div>
+<p>
+Social media marketing, content planning, digital
+communication and audience-focused content across
+education, community and travel contexts.
+</p>
 
 </div>
 
 
-<div class="skill-card">
+<div class="capability">
 
-<span class="skill-number">04</span>
+<div class="capability-number">
+04
+</div>
 
 <h3>
-Business & Clients
+SEO & Content
 </h3>
 
-<div class="skill-items">
-<span>Lead Generation</span>
-<span>Client Communication</span>
-<span>Sales Support</span>
-<span>Relationship Management</span>
-<span>Business Presentations</span>
-</div>
+<p>
+Experience across SEO and content marketing with
+a focus on improving online visibility and supporting
+a stronger digital presence.
+</p>
 
 </div>
 
 
-<div class="skill-card">
+<div class="capability">
 
-<span class="skill-number">05</span>
+<div class="capability-number">
+05
+</div>
 
 <h3>
-Business Support
+Market Research
 </h3>
 
-<div class="skill-items">
-<span>Invoice Preparation</span>
-<span>Expense Tracking</span>
-<span>Payment Follow-ups</span>
-<span>Financial Records</span>
-</div>
+<p>
+Competitor analysis, industry research, customer
+insight and market intelligence used to support
+marketing and commercial planning.
+</p>
 
 </div>
 
 
-<div class="skill-card">
+<div class="capability">
 
-<span class="skill-number">06</span>
+<div class="capability-number">
+06
+</div>
 
 <h3>
-Languages
+Lead Generation & Sales
 </h3>
 
-<div class="skill-items">
-<span>English — Fluent</span>
-<span>Hindi — Native</span>
-</div>
+<p>
+Experience supporting the complete sales journey
+from lead generation and market research through
+client communication and after-sales support.
+</p>
 
 </div>
 
@@ -2585,36 +2058,260 @@ Languages
 </section>
 
 
-<!-- =====================================================
-     EDUCATION
-===================================================== -->
+<!-- EXPERIENCE -->
+
+<section class="section" id="experience">
+
+<div class="container">
+
+<div class="experience-title reveal">
+
+<div class="eyebrow">
+EXPERIENCE
+</div>
+
+<h2 class="display">
+WHERE I'VE<br>
+DONE THE WORK.
+</h2>
+
+</div>
+
+
+<div class="reveal">
+
+
+<div class="job">
+
+<div class="job-date">
+2025 — 2026
+</div>
+
+<div>
+
+<h3>Marketing Manager</h3>
+
+<div class="job-company">
+New Malik Transportation SPC LLC
+</div>
+
+</div>
+
+<p>
+Managed the company's digital presence and website,
+developed marketing strategies to increase brand
+visibility, handled client communication and aligned
+marketing activity with business objectives. Also
+supported invoice preparation, expense tracking and
+payment follow-ups.
+</p>
+
+</div>
+
+
+<div class="job">
+
+<div class="job-date">
+2024 — 2025
+</div>
+
+<div>
+
+<h3>
+Performance Marketer
+</h3>
+
+<div class="job-company">
+CROGEEKS
+</div>
+
+</div>
+
+<p>
+Worked across SEO, PPC, social media and content
+marketing. Applied market research to campaign
+decisions, analyzed competitors and industry trends,
+and monitored KPIs to support digital optimization.
+</p>
+
+</div>
+
+
+<div class="job">
+
+<div class="job-date">
+2022 — 2024
+</div>
+
+<div>
+
+<h3>
+Market Research & Sales
+</h3>
+
+<div class="job-company">
+YSM Constructions
+</div>
+
+</div>
+
+<p>
+Gathered market intelligence, developed market reports
+and presentations and supported the sales cycle from
+lead generation through after-sales. Contributed to
+the process that secured a major client contract.
+</p>
+
+</div>
+
+
+<div class="job">
+
+<div class="job-date">
+2023
+</div>
+
+<div>
+
+<h3>
+Digital Marketing Intern
+</h3>
+
+<div class="job-company">
+CROGEEKS
+</div>
+
+</div>
+
+<p>
+Built hands-on experience in SEO, PPC advertising,
+social media, content marketing, campaign execution
+and marketing research.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RESEARCH -->
+
+<section class="section research" id="research">
+
+<div class="container">
+
+<div class="work-heading reveal">
+
+<div>
+
+<div class="eyebrow">
+RESEARCH
+</div>
+
+<h2 class="display">
+ASK WHY<br>
+BEFORE HOW.
+</h2>
+
+</div>
+
+<p>
+My academic and professional research background
+helps me understand the behaviour behind the
+marketing metrics.
+</p>
+
+</div>
+
+
+<div class="research-grid reveal">
+
+
+<div class="research-card">
+
+<small>
+RESEARCH PROJECT / 01
+</small>
+
+<h3>
+SOCIAL MEDIA,
+INFLUENCERS &
+TRAVEL BEHAVIOUR
+</h3>
+
+<p>
+Research examining whether social media posts and
+travel influencer vlogs influence the travel behaviour
+and purchase choices of urban Indians.
+</p>
+
+</div>
+
+
+<div class="research-card">
+
+<small>
+LIVE PROJECT / 02
+</small>
+
+<h3>
+SHEHAAT &
+WOMEN'S
+EMPOWERMENT
+</h3>
+
+<p>
+A live project studying SHEHAAT, a rural women-led
+business promoting women's empowerment and providing
+exposure to a purpose-driven business model.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- EDUCATION -->
 
 <section class="section">
 
 <div class="container">
 
-<div class="section-heading reveal">
+<div class="work-heading reveal">
 
-<div class="section-index">
-08 / EDUCATION
+<div>
+
+<div class="eyebrow">
+EDUCATION
 </div>
 
-<h2>
-KNOWLEDGE<br>
-<span class="grey">& CREDENTIALS.</span>
+<h2 class="display">
+THE<br>
+FOUNDATION.
 </h2>
+
+</div>
 
 </div>
 
 
 <div class="education-grid reveal">
 
+<div class="edu">
 
-<div class="education-card">
-
-<div class="education-date">
-AUG 2022 — JUL 2024
-</div>
+<small>
+2022 — 2024
+</small>
 
 <h3>
 Master of Business Administration
@@ -2628,14 +2325,14 @@ Himachal Pradesh, India
 </div>
 
 
-<div class="education-card">
+<div class="edu">
 
-<div class="education-date">
-AUG 2019 — JUN 2022
-</div>
+<small>
+2019 — 2022
+</small>
 
 <h3>
-B.Sc. in Hospitality Administration
+B.Sc. Hospitality Administration
 </h3>
 
 <p>
@@ -2648,29 +2345,28 @@ Punjab, India
 </div>
 
 
-<h3 class="certificate-heading reveal">
-Courses & Certifications
-</h3>
+<div class="certifications reveal">
 
+<div class="eyebrow" style="margin-bottom:25px;">
+CERTIFICATIONS
+</div>
 
-<div class="reveal">
-
-<div class="certificate">
-<span>Foundations of Digital Marketing and E-commerce</span>
+<div class="cert">
+<span>Foundations of Digital Marketing & E-commerce</span>
 <span>Coursera</span>
 </div>
 
-<div class="certificate">
+<div class="cert">
 <span>Fundamentals of Social Media Advertising</span>
 <span>Coursera</span>
 </div>
 
-<div class="certificate">
+<div class="cert">
 <span>Developing Innovative Ideas for Product Leaders</span>
 <span>Coursera</span>
 </div>
 
-<div class="certificate">
+<div class="cert">
 <span>Macroeconomics for Business Management</span>
 <span>Coursera</span>
 </div>
@@ -2682,25 +2378,32 @@ Courses & Certifications
 </section>
 
 
-<!-- =====================================================
-     CONTACT
-===================================================== -->
+<!-- CONTACT -->
 
 <section class="section contact" id="contact">
 
-<div class="contact-orb"></div>
-
 <div class="container reveal">
 
-<div class="contact-label">
-09 / CONTACT
+<div class="eyebrow">
+LET'S WORK TOGETHER
 </div>
 
-<h2>
-LET'S MAKE<br>
-<span class="grey">SOMETHING</span><br>
-WORK.
+<h2 class="display">
+
+<span>GOT A</span>
+
+<span class="outline">
+CHALLENGE?
+</span>
+
+<span>
+LET'S TALK.
+</span>
+
 </h2>
+
+
+<div class="contact-bottom">
 
 <a
 href="mailto:pranjalm008@gmail.com"
@@ -2709,35 +2412,29 @@ pranjalm008@gmail.com ↗
 </a>
 
 
-<div class="contact-actions">
-
-<a
-href="mailto:pranjalm008@gmail.com"
-class="button button-primary">
-Email me
-</a>
+<div class="contact-links">
 
 <a
 href="tel:+971557387916"
-class="button button-secondary">
-+971 55 738 7916
+class="btn btn-dark">
+Call
 </a>
 
 <a
 href="https://wa.me/971557387916"
 target="_blank"
-rel="noopener"
-class="button button-secondary">
+class="btn btn-dark">
 WhatsApp ↗
 </a>
 
 <a
 href="https://www.linkedin.com/in/pranjal-thakur-4573631b1"
 target="_blank"
-rel="noopener"
-class="button button-secondary">
+class="btn btn-dark">
 LinkedIn ↗
 </a>
+
+</div>
 
 </div>
 
@@ -2746,9 +2443,7 @@ LinkedIn ↗
 </section>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -2759,7 +2454,7 @@ LinkedIn ↗
 </span>
 
 <span>
-MARKETING • DIGITAL • PERFORMANCE • RESEARCH
+DIGITAL MARKETING • PERFORMANCE • SOCIAL • RESEARCH
 </span>
 
 <span>
@@ -2771,20 +2466,18 @@ UAE
 </footer>
 
 
-<!-- Instagram Embed Script -->
+<!-- INSTAGRAM -->
 
 <script async src="//www.instagram.com/embed.js"></script>
 
 
-<!-- SITE JAVASCRIPT -->
-
 <script>
 
-/* MOBILE MENU */
+/* MOBILE NAV */
 
 function toggleMenu(){
 
-    document
+  document
     .getElementById("navLinks")
     .classList
     .toggle("open");
@@ -2793,118 +2486,72 @@ function toggleMenu(){
 
 document
 .querySelectorAll("#navLinks a")
-.forEach(link => {
+.forEach(link=>{
 
-    link.addEventListener("click", () => {
+  link.addEventListener("click",()=>{
 
-        document
-        .getElementById("navLinks")
-        .classList
-        .remove("open");
+    document
+      .getElementById("navLinks")
+      .classList
+      .remove("open");
 
-    });
+  });
 
 });
 
 
-/* SCROLL REVEALS */
+/* SCROLL REVEAL */
 
-const revealObserver =
+const observer =
 new IntersectionObserver(
 
-(entries) => {
+entries=>{
 
-    entries.forEach(entry => {
+  entries.forEach(entry=>{
 
-        if(entry.isIntersecting){
+    if(entry.isIntersecting){
 
-            entry.target
-            .classList
-            .add("show");
+      entry.target
+        .classList
+        .add("show");
 
-            revealObserver
-            .unobserve(entry.target);
+      observer.unobserve(entry.target);
 
-        }
+    }
 
-    });
+  });
 
 },
 
 {
-    threshold:0.10
+  threshold:.08
 }
 
 );
 
 document
 .querySelectorAll(".reveal")
-.forEach(element => {
-
-    revealObserver.observe(element);
-
-});
+.forEach(el=>observer.observe(el));
 
 
-/* NAV BACKGROUND */
+/* NAV EFFECT */
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll",()=>{
 
-    const nav =
-    document.querySelector(".nav");
+  const nav =
+  document.querySelector("nav");
 
-    if(window.scrollY > 50){
+  if(window.scrollY > 60){
 
-        nav.style.background =
-        "rgba(8,8,8,.94)";
+    nav.style.boxShadow =
+      "0 10px 40px rgba(0,0,0,.08)";
 
-    }else{
+  }else{
 
-        nav.style.background =
-        "rgba(10,10,10,.72)";
+    nav.style.boxShadow =
+      "none";
 
-    }
-
-});
-
-
-/* SUBTLE CARD MOVEMENT */
-
-document
-.querySelectorAll(".work-card, .snapshot-card")
-.forEach(card => {
-
-    card.addEventListener("mousemove", e => {
-
-        if(window.innerWidth < 900) return;
-
-        const rect =
-        card.getBoundingClientRect();
-
-        const x =
-        e.clientX - rect.left;
-
-        const y =
-        e.clientY - rect.top;
-
-        const rotateY =
-        ((x / rect.width) - .5) * 2;
-
-        const rotateX =
-        ((y / rect.height) - .5) * -2;
-
-        card.style.transform =
-        `translateY(-6px)
-        rotateX(${rotateX}deg)
-        rotateY(${rotateY}deg)`;
-
-    });
-
-    card.addEventListener("mouseleave", () => {
-
-        card.style.transform = "";
-
-    });
+  }
 
 });
 
@@ -2912,4 +2559,3 @@ document
 
 </body>
 </html>
-```
