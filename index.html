@@ -5,9 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pranjal Thakur — Digital Marketing Portfolio</title>
+<title>Pranjal Thakur | Marketing Portfolio</title>
 
-<meta name="description" content="Portfolio of Pranjal Thakur — Marketing, Digital Marketing, Performance Marketing, Market Research and Brand Strategy.">
+<meta name="description" content="Pranjal Thakur — Marketing professional specializing in digital marketing, performance marketing, social media, market research and lead generation.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,20 +15,22 @@
 
 <style>
 
-/* =====================================================
-   ROOT
-===================================================== */
+/* =========================================================
+   01. GLOBAL
+========================================================= */
 
 :root{
-    --bg:#080808;
-    --bg2:#0d0d0d;
-    --card:#111111;
-    --card2:#151515;
-    --text:#f4f4f0;
-    --muted:#909090;
+    --bg:#070707;
+    --bg-soft:#0b0b0b;
+    --surface:#101010;
+    --surface-2:#151515;
+    --text:#f3f3ef;
+    --muted:#929292;
+    --muted-2:#5e5e5e;
+    --accent:#c8ff00;
+    --accent-soft:rgba(200,255,0,.09);
     --line:rgba(255,255,255,.10);
-    --accent:#c7ff00;
-    --accent-soft:rgba(199,255,0,.10);
+    --radius:22px;
 }
 
 *{
@@ -42,10 +44,25 @@ html{
 }
 
 body{
-    font-family:"DM Sans",sans-serif;
     background:var(--bg);
     color:var(--text);
+    font-family:"DM Sans",sans-serif;
     overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.025;
+    z-index:9999;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection{
+    background:var(--accent);
+    color:#000;
 }
 
 a{
@@ -57,62 +74,60 @@ button{
     font:inherit;
 }
 
-::selection{
-    background:var(--accent);
-    color:#000;
+img{
+    max-width:100%;
 }
 
 .container{
-    width:min(1180px,90%);
+    width:min(1200px,90%);
     margin:auto;
 }
 
-/* =====================================================
-   BACKGROUND
-===================================================== */
-
-.noise{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    opacity:.025;
-    z-index:9999;
-    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.7'/%3E%3C/svg%3E");
+.section{
+    padding:130px 0;
 }
 
-/* =====================================================
-   NAVIGATION
-===================================================== */
+.green{
+    color:var(--accent);
+}
 
-.nav-wrap{
+.grey{
+    color:#555;
+}
+
+/* =========================================================
+   02. NAV
+========================================================= */
+
+.nav-shell{
     position:fixed;
     width:100%;
-    top:20px;
+    top:18px;
     z-index:1000;
 }
 
-nav{
-    width:min(1100px,92%);
+.nav{
+    width:min(1120px,92%);
     margin:auto;
 
     display:flex;
     justify-content:space-between;
     align-items:center;
 
-    padding:13px 18px;
+    padding:11px 13px 11px 20px;
 
     border:1px solid var(--line);
     border-radius:100px;
 
-    background:rgba(12,12,12,.72);
+    background:rgba(10,10,10,.72);
     backdrop-filter:blur(20px);
 }
 
 .logo{
-    font-family:"Manrope";
+    font-family:"Manrope",sans-serif;
     font-weight:800;
-    letter-spacing:-1px;
     font-size:18px;
+    letter-spacing:-1px;
 }
 
 .logo span{
@@ -121,414 +136,598 @@ nav{
 
 .nav-links{
     display:flex;
+    align-items:center;
+    gap:26px;
     list-style:none;
-    gap:28px;
 }
 
 .nav-links a{
-    color:#aaa;
-    font-size:13px;
+    color:#999;
+    font-size:12px;
     transition:.25s;
 }
 
 .nav-links a:hover{
-    color:white;
+    color:#fff;
 }
 
-.nav-contact{
+.nav-button{
     background:var(--accent);
-    color:#050505;
-    padding:9px 16px;
+    color:#000;
+    padding:10px 17px;
     border-radius:100px;
-    font-size:12px;
     font-weight:700;
+    font-size:12px;
 }
 
-.menu{
+.menu-button{
     display:none;
+    border:0;
     background:none;
-    border:none;
-    color:white;
-    font-size:22px;
+    color:#fff;
+    font-size:23px;
+    cursor:pointer;
 }
 
-/* =====================================================
-   HERO
-===================================================== */
+/* =========================================================
+   03. HERO
+========================================================= */
 
 .hero{
     min-height:100vh;
     display:flex;
     align-items:center;
     position:relative;
-    padding-top:120px;
+    overflow:hidden;
+    padding:130px 0 80px;
 }
 
-.hero-glow{
+.hero-orb{
     position:absolute;
     width:650px;
     height:650px;
-    background:var(--accent);
+    right:-220px;
+    top:30px;
     border-radius:50%;
-    filter:blur(230px);
-    opacity:.065;
-    right:-200px;
-    top:50px;
+    background:var(--accent);
+    filter:blur(240px);
+    opacity:.075;
 }
 
-.hero-top{
+.availability{
     display:flex;
     align-items:center;
     gap:10px;
-    color:#aaa;
-    font-size:13px;
+    color:#999;
+    font-size:12px;
     margin-bottom:35px;
 }
 
-.status-dot{
+.dot{
     width:8px;
     height:8px;
     border-radius:50%;
     background:var(--accent);
-    box-shadow:0 0 14px var(--accent);
+    box-shadow:0 0 15px var(--accent);
 }
 
-.hero h1{
-    font-family:"Manrope";
-    font-size:clamp(65px,10vw,145px);
-    letter-spacing:-8px;
-    line-height:.83;
+.hero-title{
+    font-family:"Manrope",sans-serif;
     font-weight:800;
+    font-size:clamp(62px,10vw,140px);
+    line-height:.83;
+    letter-spacing:-8px;
 }
 
-.hero h1 .outline{
+.hero-title .stroke{
     color:transparent;
-    -webkit-text-stroke:1px #777;
+    -webkit-text-stroke:1px #686868;
 }
 
-.hero h1 .green{
-    color:var(--accent);
-}
-
-.hero-bottom{
+.hero-lower{
     display:grid;
-    grid-template-columns:1.3fr .7fr;
-    gap:60px;
-    margin-top:55px;
+    grid-template-columns:1.25fr .75fr;
+    gap:70px;
+    margin-top:60px;
     align-items:end;
 }
 
-.hero-description{
+.hero-copy{
+    max-width:690px;
     color:#aaa;
     font-size:18px;
-    max-width:650px;
-    line-height:1.7;
+    line-height:1.75;
 }
 
-.hero-description strong{
-    color:white;
+.hero-copy strong{
+    color:#fff;
 }
 
-.hero-buttons{
+.hero-actions{
     display:flex;
     gap:10px;
     flex-wrap:wrap;
     margin-top:30px;
 }
 
-.btn{
+.button{
     display:inline-flex;
     align-items:center;
+    justify-content:center;
     gap:10px;
+
     padding:13px 20px;
     border-radius:100px;
     border:1px solid var(--line);
-    font-size:13px;
+
+    font-size:12px;
     transition:.3s;
 }
 
-.btn-primary{
+.button-primary{
     background:var(--accent);
-    color:#050505;
+    color:#000;
     font-weight:700;
 }
 
-.btn-primary:hover{
+.button-primary:hover{
     transform:translateY(-3px);
-    box-shadow:0 10px 40px rgba(199,255,0,.15);
+    box-shadow:0 12px 40px rgba(200,255,0,.13);
 }
 
-.btn-dark:hover{
-    border-color:#777;
-    background:#141414;
+.button-secondary:hover{
+    background:#151515;
+    border-color:#555;
 }
 
-.hero-mini{
+.hero-details{
     border-left:1px solid var(--line);
     padding-left:30px;
-    color:#777;
-    font-size:12px;
+}
+
+.hero-details-label{
+    color:#555;
+    font-size:10px;
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
+
+.hero-details p{
+    color:#8d8d8d;
     line-height:1.8;
+    font-size:13px;
 }
 
-.hero-mini strong{
-    color:white;
-    display:block;
-    font-size:15px;
-    margin-bottom:5px;
+.hero-details strong{
+    color:#fff;
 }
 
-/* =====================================================
-   MARQUEE
-===================================================== */
+/* =========================================================
+   04. MARQUEE
+========================================================= */
 
 .marquee{
+    overflow:hidden;
     border-top:1px solid var(--line);
     border-bottom:1px solid var(--line);
-    overflow:hidden;
     padding:17px 0;
 }
 
-.marquee-track{
+.marquee-inner{
     display:flex;
     width:max-content;
-    animation:scroll 25s linear infinite;
+    animation:marquee 28s linear infinite;
 }
 
 .marquee span{
-    color:#777;
     font-family:"Manrope";
-    font-size:13px;
-    margin-right:50px;
-    white-space:nowrap;
+    color:#777;
+    font-size:12px;
+    margin-right:42px;
 }
 
 .marquee b{
     color:var(--accent);
-    margin-right:50px;
+    margin-right:42px;
 }
 
-@keyframes scroll{
-    from{transform:translateX(0)}
+@keyframes marquee{
     to{transform:translateX(-50%)}
 }
 
-/* =====================================================
-   GENERAL
-===================================================== */
+/* =========================================================
+   05. SECTION HEADINGS
+========================================================= */
 
-section{
-    padding:130px 0;
-}
-
-.section-head{
+.section-heading{
     display:grid;
     grid-template-columns:180px 1fr;
     gap:40px;
     margin-bottom:70px;
 }
 
-.section-number{
+.section-index{
     color:var(--accent);
-    font-size:12px;
+    font-size:11px;
     letter-spacing:2px;
     padding-top:8px;
 }
 
-.section-head h2{
+.section-heading h2{
     font-family:"Manrope";
     font-size:clamp(42px,6vw,78px);
     line-height:.98;
     letter-spacing:-4px;
 }
 
-.section-head h2 span{
-    color:#555;
-}
-
-/* =====================================================
-   ABOUT
-===================================================== */
+/* =========================================================
+   06. ABOUT
+========================================================= */
 
 .about{
-    background:var(--bg2);
+    background:var(--bg-soft);
 }
 
-.about-grid{
+.about-layout{
     display:grid;
     grid-template-columns:180px 1fr;
     gap:40px;
 }
 
-.about-content{
+.about-main{
     display:grid;
-    grid-template-columns:1.3fr .7fr;
+    grid-template-columns:1.2fr .8fr;
     gap:70px;
 }
 
-.about-main{
+.about-statement{
     font-family:"Manrope";
-    font-size:clamp(25px,3vw,40px);
-    letter-spacing:-1.5px;
-    line-height:1.3;
+    font-size:clamp(26px,3vw,42px);
+    line-height:1.25;
+    letter-spacing:-1.8px;
 }
 
-.about-main span{
-    color:#777;
+.about-statement span{
+    color:#686868;
 }
 
-.about-side{
-    color:var(--muted);
+.about-copy{
+    color:#929292;
     font-size:15px;
-    line-height:1.8;
+    line-height:1.9;
+}
+
+.about-copy p + p{
+    margin-top:20px;
 }
 
 .stats{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:1px;
-    background:var(--line);
     margin-top:70px;
     border:1px solid var(--line);
 }
 
 .stat{
-    background:var(--bg2);
     padding:30px;
+    border-right:1px solid var(--line);
 }
 
-.stat-number{
+.stat:last-child{
+    border-right:0;
+}
+
+.stat strong{
+    display:block;
     font-family:"Manrope";
-    font-size:43px;
+    font-size:42px;
     letter-spacing:-2px;
-    font-weight:700;
 }
 
-.stat-number span{
+.stat strong span{
     color:var(--accent);
 }
 
 .stat p{
     color:#777;
-    font-size:12px;
-    margin-top:5px;
+    font-size:11px;
+    margin-top:7px;
 }
 
-/* =====================================================
-   EXPERIENCE
-===================================================== */
+/* =========================================================
+   07. CAREER SNAPSHOT
+========================================================= */
 
-.experience-item{
+.snapshot-grid{
     display:grid;
-    grid-template-columns:180px 1fr 80px;
-    gap:40px;
-    border-top:1px solid var(--line);
-    padding:35px 0;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.snapshot-card{
+    min-height:270px;
+    padding:28px;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:var(--surface);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
     transition:.3s;
 }
 
-.experience-item:last-child{
+.snapshot-card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(200,255,0,.35);
+}
+
+.snapshot-number{
+    color:var(--accent);
+    font-size:11px;
+}
+
+.snapshot-card h3{
+    font-family:"Manrope";
+    font-size:23px;
+    letter-spacing:-1px;
+    line-height:1.1;
+}
+
+.snapshot-card p{
+    color:#777;
+    font-size:12px;
+    line-height:1.7;
+}
+
+/* =========================================================
+   08. EXPERIENCE
+========================================================= */
+
+.experience{
+    background:var(--bg-soft);
+}
+
+.job{
+    border-top:1px solid var(--line);
+    padding:55px 0;
+}
+
+.job:last-child{
     border-bottom:1px solid var(--line);
 }
 
-.experience-item:hover{
-    padding-left:15px;
-}
-
-.exp-date{
-    color:#777;
-    font-size:12px;
-    padding-top:7px;
-}
-
-.exp-company{
-    color:var(--accent);
-    font-size:11px;
-    letter-spacing:1px;
-    text-transform:uppercase;
-}
-
-.exp-title{
-    font-family:"Manrope";
-    font-size:30px;
-    letter-spacing:-1px;
-    margin:6px 0 14px;
-}
-
-.exp-description{
-    color:#888;
-    font-size:14px;
-    line-height:1.8;
-    max-width:750px;
-}
-
-.exp-arrow{
-    font-size:24px;
-    color:#555;
-    transition:.3s;
-}
-
-.experience-item:hover .exp-arrow{
-    color:var(--accent);
-    transform:translate(5px,-5px);
-}
-
-/* =====================================================
-   SKILLS
-===================================================== */
-
-.skills-section{
-    background:var(--bg2);
-}
-
-.skills-grid{
+.job-top{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
+    grid-template-columns:180px 1fr;
+    gap:40px;
+    margin-bottom:35px;
 }
 
-.skill-box{
-    background:var(--card);
-    border:1px solid var(--line);
-    padding:35px;
-    border-radius:14px;
+.job-date{
+    color:#777;
+    font-size:11px;
+    padding-top:8px;
 }
 
-.skill-index{
+.job-company{
     color:var(--accent);
+    text-transform:uppercase;
+    letter-spacing:1.5px;
     font-size:11px;
 }
 
-.skill-box h3{
+.job-title{
     font-family:"Manrope";
-    font-size:25px;
-    margin:25px 0 18px;
+    font-size:clamp(30px,4vw,48px);
+    letter-spacing:-2px;
+    margin-top:5px;
 }
 
-.skill-list{
+.job-body{
+    margin-left:220px;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:60px;
+}
+
+.job-summary{
+    color:#9a9a9a;
+    line-height:1.85;
+    font-size:15px;
+}
+
+.job-points{
+    display:grid;
+    gap:10px;
+}
+
+.job-point{
+    padding:14px 16px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    color:#999;
+    font-size:12px;
+}
+
+.job-point::before{
+    content:"↳";
+    color:var(--accent);
+    margin-right:8px;
+}
+
+/* =========================================================
+   09. WORK SHOWCASE
+========================================================= */
+
+.work-intro{
+    max-width:780px;
+    margin:-35px 0 65px 220px;
+    color:#8b8b8b;
+    line-height:1.85;
+    font-size:15px;
+}
+
+.featured-work{
+    border:1px solid var(--line);
+    border-radius:26px;
+    background:var(--surface);
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.featured-top{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+}
+
+.featured-info{
+    padding:50px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.work-label{
+    color:var(--accent);
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+.featured-info h3{
+    font-family:"Manrope";
+    font-size:clamp(36px,5vw,65px);
+    line-height:.95;
+    letter-spacing:-3px;
+    margin:30px 0 20px;
+}
+
+.featured-info p{
+    color:#8c8c8c;
+    line-height:1.8;
+    font-size:14px;
+    max-width:500px;
+}
+
+.tags{
     display:flex;
     flex-wrap:wrap;
-    gap:8px;
+    gap:7px;
+    margin-top:25px;
 }
 
-.skill-list span{
+.tag{
     border:1px solid var(--line);
     border-radius:100px;
     padding:7px 11px;
     color:#888;
+    font-size:10px;
+}
+
+.featured-action{
+    margin-top:45px;
+}
+
+.preview-panel{
+    min-height:540px;
+    background:
+        radial-gradient(circle at 70% 20%, rgba(200,255,0,.11), transparent 35%),
+        linear-gradient(135deg,#181818,#0c0c0c);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:35px;
+    border-left:1px solid var(--line);
+}
+
+.instagram-ui{
+    width:min(390px,100%);
+    background:#090909;
+    border:1px solid #292929;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,0,.45);
+    transform:rotate(2deg);
+    transition:.4s;
+}
+
+.featured-work:hover .instagram-ui{
+    transform:rotate(0deg) translateY(-6px);
+}
+
+.instagram-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px;
+    border-bottom:1px solid #202020;
+}
+
+.instagram-account{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.avatar{
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--accent);
+    color:#000;
+    font-size:10px;
+    font-weight:800;
+}
+
+.instagram-name{
     font-size:11px;
 }
 
-/* =====================================================
-   WORK
-===================================================== */
-
-.work-intro{
-    color:#888;
-    max-width:600px;
-    line-height:1.8;
-    margin:-40px 0 60px 220px;
+.fake-post{
+    aspect-ratio:1/1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px;
+    background:
+        linear-gradient(145deg,rgba(200,255,0,.11),transparent 50%),
+        #121212;
 }
+
+.fake-post-content small{
+    color:var(--accent);
+    letter-spacing:2px;
+    font-size:9px;
+}
+
+.fake-post-content h4{
+    font-family:"Manrope";
+    font-size:34px;
+    line-height:1;
+    letter-spacing:-2px;
+    margin:16px 0;
+}
+
+.fake-post-content p{
+    color:#777;
+    font-size:11px;
+}
+
+.instagram-actions{
+    padding:15px;
+    color:#777;
+    font-size:11px;
+    display:flex;
+    justify-content:space-between;
+}
+
+/* =========================================================
+   10. SECONDARY WORK
+========================================================= */
 
 .work-grid{
     display:grid;
@@ -537,133 +736,260 @@ section{
 }
 
 .work-card{
-    min-height:420px;
-    background:var(--card);
     border:1px solid var(--line);
-    border-radius:18px;
+    background:var(--surface);
+    border-radius:20px;
     padding:35px;
+    min-height:390px;
     position:relative;
     overflow:hidden;
-    transition:.4s;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
+    transition:.35s;
 }
 
 .work-card:hover{
-    transform:translateY(-8px);
-    border-color:rgba(199,255,0,.35);
+    transform:translateY(-7px);
+    border-color:rgba(200,255,0,.35);
 }
 
 .work-card::after{
     content:"";
     position:absolute;
-    width:250px;
-    height:250px;
-    border-radius:50%;
+    width:220px;
+    height:220px;
     background:var(--accent);
+    border-radius:50%;
     filter:blur(120px);
     opacity:0;
-    right:-80px;
-    bottom:-80px;
+    right:-100px;
+    bottom:-100px;
     transition:.4s;
 }
 
 .work-card:hover::after{
-    opacity:.09;
+    opacity:.08;
 }
 
-.work-number{
-    font-size:11px;
+.work-card-number{
     color:var(--accent);
+    font-size:10px;
     letter-spacing:2px;
 }
 
-.work-icon{
-    font-size:55px;
-    margin:30px 0;
-    opacity:.8;
+.work-symbol{
+    font-family:"Manrope";
+    font-size:65px;
+    color:#3b3b3b;
+    margin:35px 0;
 }
 
 .work-card h3{
     font-family:"Manrope";
-    font-size:34px;
+    font-size:32px;
     line-height:1;
-    letter-spacing:-2px;
-    max-width:350px;
+    letter-spacing:-1.5px;
 }
 
 .work-card p{
-    color:#777;
+    color:#7e7e7e;
     font-size:13px;
+    line-height:1.75;
     margin-top:15px;
-    max-width:390px;
-    line-height:1.7;
 }
 
-.work-link{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border-top:1px solid var(--line);
-    padding-top:20px;
-    margin-top:40px;
-    font-size:12px;
-    color:#aaa;
+.work-card-footer{
     position:relative;
     z-index:2;
-}
-
-.work-link span:last-child{
-    font-size:20px;
-    transition:.3s;
-}
-
-.work-card:hover .work-link span:last-child{
-    transform:translate(5px,-5px);
-    color:var(--accent);
-}
-
-/* =====================================================
-   PROJECTS
-===================================================== */
-
-.projects{
-    background:var(--bg2);
-}
-
-.project-row{
     border-top:1px solid var(--line);
-    padding:35px 0;
-    display:grid;
-    grid-template-columns:100px 1fr 1fr;
-    gap:40px;
+    padding-top:20px;
+    margin-top:35px;
+    display:flex;
+    justify-content:space-between;
+    color:#999;
+    font-size:11px;
 }
 
-.project-row:last-child{
-    border-bottom:1px solid var(--line);
-}
-
-.project-num{
+.work-card-footer b{
     color:var(--accent);
-    font-size:12px;
+    font-size:18px;
 }
 
-.project-row h3{
+/* =========================================================
+   11. REAL REEL EMBED
+========================================================= */
+
+.reel-showcase{
+    margin-top:25px;
+    border:1px solid var(--line);
+    border-radius:26px;
+    background:var(--surface);
+    padding:45px;
+}
+
+.reel-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:60px;
+    align-items:center;
+}
+
+.reel-info h3{
     font-family:"Manrope";
-    font-size:28px;
-    letter-spacing:-1px;
+    font-size:48px;
+    letter-spacing:-2px;
+    line-height:1;
+    margin:20px 0;
 }
 
-.project-row p{
+.reel-info p{
     color:#888;
     font-size:14px;
     line-height:1.8;
 }
 
-/* =====================================================
-   EDUCATION
-===================================================== */
+.reel-embed{
+    display:flex;
+    justify-content:center;
+    min-width:0;
+}
+
+.reel-embed blockquote{
+    max-width:430px !important;
+    min-width:280px !important;
+    width:100% !important;
+}
+
+/* =========================================================
+   12. PERFORMANCE
+========================================================= */
+
+.performance{
+    background:var(--bg-soft);
+}
+
+.performance-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.performance-card{
+    padding:35px;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:var(--surface);
+    min-height:330px;
+}
+
+.performance-icon{
+    width:48px;
+    height:48px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid var(--line);
+    border-radius:50%;
+    color:var(--accent);
+    margin-bottom:45px;
+}
+
+.performance-card h3{
+    font-family:"Manrope";
+    font-size:25px;
+    letter-spacing:-1px;
+    margin-bottom:15px;
+}
+
+.performance-card p{
+    color:#858585;
+    font-size:13px;
+    line-height:1.8;
+}
+
+/* =========================================================
+   13. RESEARCH PROJECTS
+========================================================= */
+
+.project{
+    display:grid;
+    grid-template-columns:100px .8fr 1.2fr;
+    gap:40px;
+    padding:40px 0;
+    border-top:1px solid var(--line);
+}
+
+.project:last-child{
+    border-bottom:1px solid var(--line);
+}
+
+.project-number{
+    color:var(--accent);
+    font-size:11px;
+}
+
+.project h3{
+    font-family:"Manrope";
+    font-size:28px;
+    letter-spacing:-1px;
+}
+
+.project p{
+    color:#858585;
+    font-size:14px;
+    line-height:1.85;
+}
+
+/* =========================================================
+   14. SKILLS
+========================================================= */
+
+.skills{
+    background:var(--bg-soft);
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.skill-card{
+    padding:35px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:18px;
+}
+
+.skill-number{
+    color:var(--accent);
+    font-size:10px;
+}
+
+.skill-card h3{
+    font-family:"Manrope";
+    font-size:26px;
+    margin:30px 0 20px;
+}
+
+.skill-items{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.skill-items span{
+    border:1px solid var(--line);
+    padding:8px 12px;
+    border-radius:100px;
+    color:#8a8a8a;
+    font-size:11px;
+}
+
+/* =========================================================
+   15. EDUCATION
+========================================================= */
 
 .education-grid{
     display:grid;
@@ -671,241 +997,281 @@ section{
     gap:15px;
 }
 
-.edu-card{
+.education-card{
+    background:var(--surface);
     border:1px solid var(--line);
+    border-radius:18px;
     padding:35px;
-    border-radius:14px;
-    background:var(--card);
 }
 
-.edu-year{
+.education-date{
     color:var(--accent);
-    font-size:11px;
+    font-size:10px;
+    letter-spacing:1px;
 }
 
-.edu-card h3{
+.education-card h3{
     font-family:"Manrope";
-    font-size:25px;
-    line-height:1.2;
-    margin:25px 0 10px;
+    font-size:27px;
+    line-height:1.15;
+    letter-spacing:-1px;
+    margin:35px 0 12px;
 }
 
-.edu-card p{
+.education-card p{
     color:#777;
+    line-height:1.7;
     font-size:13px;
-    line-height:1.6;
 }
 
-.cert-title{
+.certificate-heading{
     font-family:"Manrope";
-    font-size:28px;
+    font-size:30px;
     margin:70px 0 25px;
 }
 
-.cert-list{
-    border-top:1px solid var(--line);
-}
-
-.cert{
+.certificate{
     display:flex;
     justify-content:space-between;
     gap:20px;
-    border-bottom:1px solid var(--line);
     padding:20px 0;
+    border-top:1px solid var(--line);
     color:#aaa;
-    font-size:14px;
+    font-size:13px;
 }
 
-.cert span:last-child{
-    color:#666;
+.certificate:last-child{
+    border-bottom:1px solid var(--line);
 }
 
-/* =====================================================
-   CONTACT
-===================================================== */
+.certificate span:last-child{
+    color:#555;
+}
+
+/* =========================================================
+   16. CONTACT
+========================================================= */
 
 .contact{
-    min-height:85vh;
+    min-height:90vh;
     display:flex;
     align-items:center;
     position:relative;
     overflow:hidden;
 }
 
-.contact-glow{
+.contact-orb{
     position:absolute;
-    width:500px;
-    height:500px;
-    border-radius:50%;
-    background:var(--accent);
-    filter:blur(220px);
-    opacity:.07;
+    width:550px;
+    height:550px;
     left:30%;
+    bottom:-200px;
+    background:var(--accent);
+    filter:blur(240px);
+    opacity:.07;
 }
 
-.contact-small{
+.contact-label{
     color:var(--accent);
-    font-size:12px;
+    font-size:11px;
     letter-spacing:2px;
     margin-bottom:30px;
 }
 
 .contact h2{
     font-family:"Manrope";
-    font-size:clamp(55px,9vw,125px);
-    letter-spacing:-7px;
-    line-height:.85;
-    margin-bottom:50px;
+    font-size:clamp(60px,10vw,135px);
+    line-height:.82;
+    letter-spacing:-8px;
 }
 
-.contact h2 span{
-    color:#555;
-}
-
-.big-email{
+.contact-email{
     display:inline-block;
     font-family:"Manrope";
     font-size:clamp(20px,3vw,38px);
     border-bottom:2px solid var(--accent);
+    margin:50px 0 30px;
     padding-bottom:5px;
-    margin-bottom:35px;
 }
 
-.contact-links{
+.contact-actions{
     display:flex;
     gap:10px;
     flex-wrap:wrap;
 }
 
-/* =====================================================
-   FOOTER
-===================================================== */
+/* =========================================================
+   17. FOOTER
+========================================================= */
 
 footer{
     border-top:1px solid var(--line);
-    padding:30px 0;
+    padding:28px 0;
 }
 
-.footer-inner{
+.footer{
     display:flex;
     justify-content:space-between;
+    gap:20px;
     color:#555;
-    font-size:11px;
+    font-size:10px;
 }
 
-/* =====================================================
-   REVEAL
-===================================================== */
+/* =========================================================
+   18. REVEALS
+========================================================= */
 
 .reveal{
     opacity:0;
-    transform:translateY(35px);
-    transition:opacity .8s ease,transform .8s ease;
+    transform:translateY(30px);
+    transition:opacity .75s ease, transform .75s ease;
 }
 
-.reveal.active{
+.reveal.show{
     opacity:1;
-    transform:translateY(0);
+    transform:none;
 }
 
-/* =====================================================
-   MOBILE
-===================================================== */
+/* =========================================================
+   19. RESPONSIVE
+========================================================= */
 
-@media(max-width:800px){
+@media(max-width:900px){
 
     .nav-links,
-    .nav-contact{
+    .nav-button{
         display:none;
     }
 
-    .menu{
+    .menu-button{
         display:block;
     }
 
-    .nav-links.mobile-active{
+    .nav-links.open{
         display:flex;
         position:absolute;
         top:65px;
         left:4%;
         width:92%;
-        padding:25px;
-        border-radius:20px;
-        background:#111;
-        border:1px solid var(--line);
         flex-direction:column;
+        align-items:flex-start;
+        padding:25px;
+        background:#101010;
+        border:1px solid var(--line);
+        border-radius:20px;
     }
 
-    .hero h1{
+    .hero-title{
         letter-spacing:-5px;
     }
 
-    .hero-bottom,
-    .about-content{
+    .hero-lower,
+    .about-main,
+    .featured-top,
+    .reel-grid{
         grid-template-columns:1fr;
-        gap:35px;
     }
 
-    .hero-mini{
+    .hero-details{
         border-left:0;
-        padding-left:0;
         border-top:1px solid var(--line);
-        padding-top:25px;
+        padding:25px 0 0;
     }
 
-    section{
+    .section{
         padding:90px 0;
     }
 
-    .section-head,
-    .about-grid{
+    .section-heading,
+    .about-layout{
         grid-template-columns:1fr;
         gap:15px;
     }
 
-    .section-head h2{
+    .section-heading h2{
         letter-spacing:-3px;
     }
 
-    .stats{
-        grid-template-columns:1fr;
+    .stats,
+    .snapshot-grid,
+    .performance-grid{
+        grid-template-columns:1fr 1fr;
     }
 
-    .experience-item{
+    .job-top{
         grid-template-columns:1fr;
         gap:10px;
     }
 
-    .exp-arrow{
-        display:none;
+    .job-body{
+        margin-left:0;
+        grid-template-columns:1fr;
+        gap:30px;
     }
 
-    .skills-grid,
+    .work-intro{
+        margin:-30px 0 50px;
+    }
+
+    .preview-panel{
+        border-left:0;
+        border-top:1px solid var(--line);
+    }
+
     .work-grid,
+    .skills-grid,
     .education-grid{
         grid-template-columns:1fr;
     }
 
-    .work-intro{
-        margin:-30px 0 45px;
-    }
-
-    .work-card{
-        min-height:350px;
-    }
-
-    .project-row{
+    .project{
         grid-template-columns:1fr;
         gap:15px;
     }
 
-    .contact h2{
+}
+
+@media(max-width:600px){
+
+    .hero-title{
         letter-spacing:-4px;
     }
 
-    .footer-inner{
+    .stats,
+    .snapshot-grid,
+    .performance-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stat{
+        border-right:0;
+        border-bottom:1px solid var(--line);
+    }
+
+    .stat:last-child{
+        border-bottom:0;
+    }
+
+    .featured-info,
+    .reel-showcase{
+        padding:28px;
+    }
+
+    .preview-panel{
+        min-height:430px;
+        padding:25px;
+    }
+
+    .fake-post-content h4{
+        font-size:27px;
+    }
+
+    .contact h2{
+        letter-spacing:-5px;
+    }
+
+    .footer{
         flex-direction:column;
-        gap:10px;
     }
 
 }
@@ -915,172 +1281,214 @@ footer{
 
 <body>
 
-<div class="noise"></div>
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
-<!-- NAVIGATION -->
+<div class="nav-shell">
 
-<div class="nav-wrap">
-<nav>
+<nav class="nav">
 
-    <a href="#home" class="logo">
-        PRANJAL<span>.</span>
-    </a>
+<a href="#home" class="logo">
+PRANJAL<span>.</span>
+</a>
 
-    <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#projects">Projects</a></li>
-    </ul>
+<ul class="nav-links" id="navLinks">
+<li><a href="#about">About</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#work">Work</a></li>
+<li><a href="#research">Research</a></li>
+<li><a href="#skills">Skills</a></li>
+</ul>
 
-    <a href="#contact" class="nav-contact">
-        Let's talk ↗
-    </a>
+<a href="#contact" class="nav-button">
+Let's talk ↗
+</a>
 
-    <button class="menu" onclick="toggleMenu()">☰</button>
+<button class="menu-button" onclick="toggleMenu()" aria-label="Menu">
+☰
+</button>
 
 </nav>
+
 </div>
 
 
-<!-- HERO -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-<section class="hero" id="home">
+<header class="hero" id="home">
 
-<div class="hero-glow"></div>
+<div class="hero-orb"></div>
 
 <div class="container">
 
-    <div class="hero-top">
-        <span class="status-dot"></span>
-        Marketing professional • UAE
-    </div>
+<div class="availability">
+<span class="dot"></span>
+Marketing professional based in the UAE
+</div>
 
-    <h1>
-        MARKETING,<br>
-        <span class="outline">BUT MAKE IT</span><br>
-        <span class="green">MEASURABLE.</span>
-    </h1>
+<h1 class="hero-title">
+MARKETING,<br>
+<span class="stroke">BUT MAKE IT</span><br>
+<span class="green">MEASURABLE.</span>
+</h1>
 
-    <div class="hero-bottom">
+<div class="hero-lower">
 
-        <div>
+<div>
 
-            <p class="hero-description">
-                I'm <strong>Pranjal Thakur</strong> — a marketing professional
-                working across digital marketing, performance marketing,
-                market research, lead generation and brand strategy.
-                I combine creative thinking with data-driven decision making
-                to help brands get noticed and grow.
-            </p>
+<p class="hero-copy">
 
-            <div class="hero-buttons">
+I'm <strong>Pranjal Thakur</strong>, a marketing professional
+with experience across digital marketing, performance marketing,
+social media, market research, lead generation, client communication
+and campaign management.
 
-                <a href="#work" class="btn btn-primary">
-                    Explore my work ↓
-                </a>
+<br><br>
 
-                <a
-                href="https://www.linkedin.com/in/pranjal-thakur-4573631b1"
-                target="_blank"
-                class="btn btn-dark">
-                    LinkedIn ↗
-                </a>
+I enjoy combining <strong>creative thinking, customer insight
+and performance data</strong> to build marketing that supports
+real business growth.
 
-            </div>
+</p>
 
-        </div>
+<div class="hero-actions">
 
-        <div class="hero-mini">
-            <strong>PRANJAL THAKUR</strong>
-            Marketing Manager<br>
-            Digital Marketing<br>
-            Performance Marketing<br>
-            Market Research
-        </div>
+<a href="#work" class="button button-primary">
+See my work ↓
+</a>
 
-    </div>
+<a href="#experience" class="button button-secondary">
+Experience
+</a>
+
+<a
+href="https://www.linkedin.com/in/pranjal-thakur-4573631b1"
+target="_blank"
+rel="noopener"
+class="button button-secondary">
+LinkedIn ↗
+</a>
 
 </div>
-</section>
+
+</div>
 
 
-<!-- MARQUEE -->
+<div class="hero-details">
+
+<div class="hero-details-label">
+FOCUS
+</div>
+
+<p>
+<strong>Digital Marketing</strong><br>
+Performance Marketing<br>
+Social Media<br>
+Market Research<br>
+Lead Generation<br>
+Brand Strategy
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     MARQUEE
+===================================================== -->
 
 <div class="marquee">
 
-<div class="marquee-track">
+<div class="marquee-inner">
 
 <span>DIGITAL MARKETING</span><b>✦</b>
 <span>PERFORMANCE</span><b>✦</b>
+<span>SOCIAL MEDIA</span><b>✦</b>
 <span>SEO</span><b>✦</b>
 <span>PPC</span><b>✦</b>
-<span>SOCIAL MEDIA</span><b>✦</b>
 <span>MARKET RESEARCH</span><b>✦</b>
 <span>LEAD GENERATION</span><b>✦</b>
-<span>BRAND STRATEGY</span><b>✦</b>
+<span>CONTENT</span><b>✦</b>
 
 <span>DIGITAL MARKETING</span><b>✦</b>
 <span>PERFORMANCE</span><b>✦</b>
+<span>SOCIAL MEDIA</span><b>✦</b>
 <span>SEO</span><b>✦</b>
 <span>PPC</span><b>✦</b>
-<span>SOCIAL MEDIA</span><b>✦</b>
 <span>MARKET RESEARCH</span><b>✦</b>
 <span>LEAD GENERATION</span><b>✦</b>
-<span>BRAND STRATEGY</span><b>✦</b>
+<span>CONTENT</span><b>✦</b>
 
 </div>
 
 </div>
 
 
-<!-- ABOUT -->
+<!-- =====================================================
+     ABOUT
+===================================================== -->
 
-<section class="about" id="about">
+<section class="section about" id="about">
 
 <div class="container">
 
-<div class="section-head reveal">
+<div class="section-heading reveal">
 
-<div class="section-number">
+<div class="section-index">
 01 / ABOUT
 </div>
 
 <h2>
-STRATEGY MEETS<br>
-<span>CREATIVITY.</span>
+I DON'T JUST<br>
+<span class="grey">POST CONTENT.</span>
 </h2>
 
 </div>
 
 
-<div class="about-grid reveal">
+<div class="about-layout reveal">
 
 <div></div>
 
 <div>
 
-<div class="about-content">
+<div class="about-main">
 
-<p class="about-main">
-I work at the intersection of
-<span>marketing, research, performance and business growth.</span>
-</p>
+<div class="about-statement">
 
-<div class="about-side">
+I look at the whole picture —
+<span>audience, market, message, channel and performance.</span>
 
-<p>
-My experience spans digital marketing, performance campaigns,
-market research, lead generation, client communication and
-campaign management.
-</p>
+</div>
 
-<br>
+<div class="about-copy">
 
 <p>
-I enjoy understanding why people make decisions, translating
-those insights into marketing strategies and using performance
-data to continuously improve the result.
+My professional background combines digital marketing,
+performance marketing, market research, lead generation,
+client communication and sales support.
+</p>
+
+<p>
+That means I approach marketing from both sides:
+the creative side that earns attention and the analytical
+side that asks whether the activity is actually helping
+the business.
+</p>
+
+<p>
+My work has included website management, SEO, PPC,
+social media marketing, content marketing, competitor
+research, KPI monitoring, client communication and
+business-development support.
 </p>
 
 </div>
@@ -1091,18 +1499,18 @@ data to continuously improve the result.
 <div class="stats">
 
 <div class="stat">
-<div class="stat-number">3<span>+</span></div>
-<p>Years of professional experience</p>
+<strong>3<span>+</span></strong>
+<p>Years across marketing, research & sales</p>
 </div>
 
 <div class="stat">
-<div class="stat-number">4<span>+</span></div>
-<p>Marketing roles & experiences</p>
+<strong>4<span>+</span></strong>
+<p>Professional marketing experiences</p>
 </div>
 
 <div class="stat">
-<div class="stat-number">360<span>°</span></div>
-<p>Research → Strategy → Execution</p>
+<strong>360<span>°</span></strong>
+<p>Research → Strategy → Execution → Analysis</p>
 </div>
 
 </div>
@@ -1112,366 +1520,560 @@ data to continuously improve the result.
 </div>
 
 </div>
+
 </section>
 
 
-<!-- EXPERIENCE -->
+<!-- =====================================================
+     CAREER SNAPSHOT
+===================================================== -->
 
-<section id="experience">
+<section class="section">
 
 <div class="container">
 
-<div class="section-head reveal">
+<div class="section-heading reveal">
 
-<div class="section-number">
-02 / EXPERIENCE
+<div class="section-index">
+02 / SNAPSHOT
 </div>
 
 <h2>
-THE WORK<br>
-<span>SO FAR.</span>
+HOW I THINK<br>
+<span class="grey">ABOUT MARKETING.</span>
 </h2>
 
 </div>
 
 
-<div class="reveal">
+<div class="snapshot-grid reveal">
 
-<div class="experience-item">
+<div class="snapshot-card">
 
-<div class="exp-date">
+<span class="snapshot-number">01</span>
+
+<h3>
+Understand<br>the market.
+</h3>
+
+<p>
+Research the audience, competitors, trends and business
+environment before deciding what the message should be.
+</p>
+
+</div>
+
+
+<div class="snapshot-card">
+
+<span class="snapshot-number">02</span>
+
+<h3>
+Build the<br>strategy.
+</h3>
+
+<p>
+Translate insights into channel, content and campaign
+decisions that support clear business objectives.
+</p>
+
+</div>
+
+
+<div class="snapshot-card">
+
+<span class="snapshot-number">03</span>
+
+<h3>
+Execute the<br>idea.
+</h3>
+
+<p>
+Turn strategy into digital campaigns, content,
+social communication and online brand activity.
+</p>
+
+</div>
+
+
+<div class="snapshot-card">
+
+<span class="snapshot-number">04</span>
+
+<h3>
+Measure &<br>improve.
+</h3>
+
+<p>
+Monitor KPIs, campaign performance, competitors and
+customer response to continuously improve execution.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     DETAILED EXPERIENCE
+===================================================== -->
+
+<section class="section experience" id="experience">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="section-index">
+03 / EXPERIENCE
+</div>
+
+<h2>
+EXPERIENCE,<br>
+<span class="grey">IN DETAIL.</span>
+</h2>
+
+</div>
+
+
+<!-- JOB 1 -->
+
+<article class="job reveal">
+
+<div class="job-top">
+
+<div class="job-date">
 MAY 2025 — AUG 2026
 </div>
 
 <div>
 
-<div class="exp-company">
-New Malik Transportation SPC LLC
+<div class="job-company">
+New Malik Transportation SPC. LLC.
 </div>
 
-<h3 class="exp-title">
+<h3 class="job-title">
 Marketing Manager
 </h3>
 
-<p class="exp-description">
-Managed the company's digital presence and website, developed
-marketing strategies to increase brand visibility and supported
-business growth. Handled client communication and relationships
-while coordinating marketing activities with internal business
-objectives. Also supported invoice preparation, payment follow-ups,
-expense tracking and basic financial records.
+</div>
+
+</div>
+
+
+<div class="job-body">
+
+<p class="job-summary">
+
+Managed marketing activities with a focus on strengthening
+the company's online presence and supporting business growth.
+
+I managed website content, developed marketing strategies,
+handled client communication and worked with internal teams
+to keep marketing aligned with wider company objectives.
+
+The role also exposed me to the operational side of the
+business through basic accounts support, including invoice
+preparation, expense tracking, payment follow-ups and
+financial record maintenance.
+
 </p>
 
+
+<div class="job-points">
+
+<div class="job-point">Website management</div>
+<div class="job-point">Brand visibility strategy</div>
+<div class="job-point">Client communication</div>
+<div class="job-point">Relationship management</div>
+<div class="job-point">Internal coordination</div>
+<div class="job-point">Invoice preparation</div>
+<div class="job-point">Expense tracking</div>
+<div class="job-point">Payment follow-ups</div>
+
 </div>
 
-<div class="exp-arrow">↗</div>
-
 </div>
 
+</article>
 
-<div class="experience-item">
 
-<div class="exp-date">
+<!-- JOB 2 -->
+
+<article class="job reveal">
+
+<div class="job-top">
+
+<div class="job-date">
 NOV 2024 — MAR 2025
 </div>
 
 <div>
 
-<div class="exp-company">
+<div class="job-company">
 CROGEEKS
 </div>
 
-<h3 class="exp-title">
+<h3 class="job-title">
 Performance Marketer
 </h3>
 
-<p class="exp-description">
-Worked across SEO, PPC advertising, social media and content
-marketing. Used market research and competitor analysis to
-support campaign decisions and monitored KPIs to improve
-digital performance and online presence.
+</div>
+
+</div>
+
+
+<div class="job-body">
+
+<p class="job-summary">
+
+Worked across multiple areas of digital marketing including
+SEO, PPC advertising, social media and content marketing.
+
+Market research and competitor analysis were used to better
+understand industry trends and customer preferences, helping
+inform campaign decisions.
+
+I also monitored key performance indicators to evaluate
+digital activity, optimize online presence and improve
+the user experience.
+
 </p>
 
+
+<div class="job-points">
+
+<div class="job-point">SEO</div>
+<div class="job-point">PPC advertising</div>
+<div class="job-point">Social media marketing</div>
+<div class="job-point">Content marketing</div>
+<div class="job-point">Market research</div>
+<div class="job-point">Competitor analysis</div>
+<div class="job-point">Industry trend analysis</div>
+<div class="job-point">KPI monitoring</div>
+
 </div>
 
-<div class="exp-arrow">↗</div>
-
 </div>
 
+</article>
 
-<div class="experience-item">
 
-<div class="exp-date">
+<!-- JOB 3 -->
+
+<article class="job reveal">
+
+<div class="job-top">
+
+<div class="job-date">
 AUG 2022 — AUG 2024
 </div>
 
 <div>
 
-<div class="exp-company">
+<div class="job-company">
 YSM Constructions
 </div>
 
-<h3 class="exp-title">
+<h3 class="job-title">
 Market Research & Sales
 </h3>
 
-<p class="exp-description">
-Built industry relationships to gather market intelligence,
-prepared research reports and presentations for sales planning,
-supported the sales process from lead generation through
-after-sales support and contributed to securing a major
-client contract.
+</div>
+
+</div>
+
+
+<div class="job-body">
+
+<p class="job-summary">
+
+Developed and maintained relationships with key industry
+contacts to gather market intelligence and support
+business planning.
+
+I created detailed market reports and presentations for
+sales and business planning and supported the full
+sales process from lead generation through after-sales.
+
+I also played a role in the process that helped the
+business secure a contract with a major client.
+
 </p>
 
+
+<div class="job-points">
+
+<div class="job-point">Market intelligence</div>
+<div class="job-point">Industry relationships</div>
+<div class="job-point">Market reports</div>
+<div class="job-point">Business presentations</div>
+<div class="job-point">Lead generation</div>
+<div class="job-point">Sales support</div>
+<div class="job-point">After-sales support</div>
+<div class="job-point">Client development</div>
+
 </div>
 
-<div class="exp-arrow">↗</div>
-
 </div>
 
+</article>
 
-<div class="experience-item">
 
-<div class="exp-date">
+<!-- JOB 4 -->
+
+<article class="job reveal">
+
+<div class="job-top">
+
+<div class="job-date">
 JUN 2023 — AUG 2023
 </div>
 
 <div>
 
-<div class="exp-company">
+<div class="job-company">
 CROGEEKS
 </div>
 
-<h3 class="exp-title">
+<h3 class="job-title">
 Digital Marketing Intern
 </h3>
 
-<p class="exp-description">
-Built hands-on experience across SEO, PPC advertising,
-social media marketing, content marketing, campaign
-execution and marketing research.
+</div>
+
+</div>
+
+
+<div class="job-body">
+
+<p class="job-summary">
+
+Built practical digital marketing experience across SEO,
+PPC advertising, social media and content marketing.
+
+Supported campaign execution, marketing research and
+activities designed to improve online presence.
+
+The internship gave me hands-on exposure to the digital
+marketing disciplines that later became part of my
+performance marketing work.
+
 </p>
 
+
+<div class="job-points">
+
+<div class="job-point">SEO fundamentals</div>
+<div class="job-point">PPC advertising</div>
+<div class="job-point">Social media</div>
+<div class="job-point">Content marketing</div>
+<div class="job-point">Campaign execution</div>
+<div class="job-point">Marketing research</div>
+
 </div>
 
-<div class="exp-arrow">↗</div>
+</div>
+
+</article>
 
 </div>
 
-</div>
-
-</div>
 </section>
 
 
-<!-- SKILLS -->
+<!-- =====================================================
+     SELECTED SOCIAL WORK
+===================================================== -->
 
-<section class="skills-section">
-
-<div class="container">
-
-<div class="section-head reveal">
-
-<div class="section-number">
-03 / CAPABILITIES
-</div>
-
-<h2>
-WHAT I<br>
-<span>BRING.</span>
-</h2>
-
-</div>
-
-
-<div class="skills-grid reveal">
-
-<div class="skill-box">
-
-<div class="skill-index">01</div>
-
-<h3>Performance</h3>
-
-<div class="skill-list">
-<span>Google Ads</span>
-<span>PPC</span>
-<span>KPI Monitoring</span>
-<span>Campaign Management</span>
-<span>Performance Marketing</span>
-</div>
-
-</div>
-
-
-<div class="skill-box">
-
-<div class="skill-index">02</div>
-
-<h3>Digital & Content</h3>
-
-<div class="skill-list">
-<span>Social Media Marketing</span>
-<span>SEO</span>
-<span>Content Marketing</span>
-<span>Website Management</span>
-<span>Digital Marketing</span>
-</div>
-
-</div>
-
-
-<div class="skill-box">
-
-<div class="skill-index">03</div>
-
-<h3>Strategy & Research</h3>
-
-<div class="skill-list">
-<span>Market Research</span>
-<span>Competitor Analysis</span>
-<span>Brand Strategy</span>
-<span>Consumer Research</span>
-<span>Market Intelligence</span>
-</div>
-
-</div>
-
-
-<div class="skill-box">
-
-<div class="skill-index">04</div>
-
-<h3>Growth & Business</h3>
-
-<div class="skill-list">
-<span>Lead Generation</span>
-<span>Client Communication</span>
-<span>Sales Support</span>
-<span>Business Growth</span>
-<span>Relationship Management</span>
-</div>
-
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- SELECTED WORK -->
-
-<section id="work">
+<section class="section" id="work">
 
 <div class="container">
 
-<div class="section-head reveal">
+<div class="section-heading reveal">
 
-<div class="section-number">
+<div class="section-index">
 04 / SELECTED WORK
 </div>
 
 <h2>
-NOT JUST<br>
-<span>TALK.</span>
+THE WORK<br>
+<span class="grey">SHOULD BE SEEN.</span>
 </h2>
 
 </div>
 
+
 <p class="work-intro reveal">
-A selection of social media pages and content I've worked on.
-Explore the live work directly on Instagram.
+
+These are selected social media pages and content I have
+worked on. Instead of hiding them behind a résumé bullet,
+this section gives the work its own space and lets recruiters
+open the live Instagram presence directly.
+
 </p>
 
+
+<!-- SHOOlINI FEATURE -->
+
+<div class="featured-work reveal">
+
+<div class="featured-top">
+
+<div class="featured-info">
+
+<div>
+
+<span class="work-label">
+SOCIAL MEDIA / EDUCATION
+</span>
+
+<h3>
+Shoolini<br>
+University
+</h3>
+
+<p>
+Selected social media work connected with Shoolini
+University's Instagram presence. The work sits within
+a large education brand environment where social content
+needs to communicate university life, community and
+institutional identity to a digital audience.
+</p>
+
+<div class="tags">
+<span class="tag">Social Media</span>
+<span class="tag">Content</span>
+<span class="tag">Education</span>
+<span class="tag">Digital Communication</span>
+</div>
+
+</div>
+
+
+<div class="featured-action">
+
+<a
+href="https://www.instagram.com/shooliniuniversity"
+target="_blank"
+rel="noopener"
+class="button button-primary">
+Explore live account ↗
+</a>
+
+</div>
+
+</div>
+
+
+<div class="preview-panel">
+
+<div class="instagram-ui">
+
+<div class="instagram-head">
+
+<div class="instagram-account">
+
+<div class="avatar">
+SU
+</div>
+
+<div class="instagram-name">
+<strong>shooliniuniversity</strong><br>
+<span style="color:#555">Instagram</span>
+</div>
+
+</div>
+
+<div style="color:#666">•••</div>
+
+</div>
+
+
+<div class="fake-post">
+
+<div class="fake-post-content">
+
+<small>SELECTED WORK</small>
+
+<h4>
+SOCIAL<br>
+MEDIA
+</h4>
+
+<p>
+Open the live Instagram account to explore
+the published content.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="instagram-actions">
+
+<span>♡ &nbsp; ◯ &nbsp; ↗</span>
+<span>▢</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- OTHER WORK -->
 
 <div class="work-grid reveal">
 
 
 <a
-href="https://www.instagram.com/shooliniuniversity"
-target="_blank"
-class="work-card">
-
-<div>
-
-<div class="work-number">PROJECT / 01</div>
-
-<div class="work-icon">◎</div>
-
-<h3>
-Shoolini<br>University
-</h3>
-
-<p>
-Selected social media and content work for
-Shoolini University's digital presence.
-</p>
-
-</div>
-
-<div class="work-link">
-<span>VIEW ON INSTAGRAM</span>
-<span>↗</span>
-</div>
-
-</a>
-
-
-<a
 href="https://www.instagram.com/shooliniansforyou"
 target="_blank"
+rel="noopener"
 class="work-card">
 
 <div>
 
-<div class="work-number">PROJECT / 02</div>
+<div class="work-card-number">
+PROJECT / 02
+</div>
 
-<div class="work-icon">◌</div>
+<div class="work-symbol">
+S+
+</div>
 
 <h3>
-Shoolinians<br>For You
+Shoolinians<br>
+For You
 </h3>
 
 <p>
-Social media content and digital communication
-created for the Shoolinians For You community.
+Selected social media work for the Shoolinians For You
+Instagram presence, focused on digital communication
+and community-oriented social content.
 </p>
 
+<div class="tags">
+<span class="tag">Social</span>
+<span class="tag">Community</span>
+<span class="tag">Content</span>
 </div>
-
-<div class="work-link">
-<span>VIEW ON INSTAGRAM</span>
-<span>↗</span>
-</div>
-
-</a>
-
-
-<a
-href="https://www.instagram.com/reel/DZwMlgaz8KN/"
-target="_blank"
-class="work-card">
-
-<div>
-
-<div class="work-number">PROJECT / 03</div>
-
-<div class="work-icon">▶</div>
-
-<h3>
-Social<br>Reel
-</h3>
-
-<p>
-Selected short-form social media content showcasing
-creative digital content work.
-</p>
 
 </div>
 
-<div class="work-link">
-<span>WATCH THE REEL</span>
-<span>↗</span>
+<div class="work-card-footer">
+<span>OPEN LIVE WORK</span>
+<b>↗</b>
 </div>
 
 </a>
@@ -1480,54 +2082,284 @@ creative digital content work.
 <a
 href="https://www.instagram.com/journeyseeker_"
 target="_blank"
+rel="noopener"
 class="work-card">
 
 <div>
 
-<div class="work-number">PROJECT / 04</div>
+<div class="work-card-number">
+PROJECT / 03
+</div>
 
-<div class="work-icon">◇</div>
+<div class="work-symbol">
+JS
+</div>
 
 <h3>
-Journey<br>Seeker
+Journey<br>
+Seeker
 </h3>
 
 <p>
-Social media content work focused on travel,
-visual storytelling and audience engagement.
+Selected work connected with a travel-focused Instagram
+presence, bringing together social media, visual content
+and travel-oriented digital storytelling.
 </p>
+
+<div class="tags">
+<span class="tag">Travel</span>
+<span class="tag">Social Media</span>
+<span class="tag">Visual Content</span>
+</div>
 
 </div>
 
-<div class="work-link">
-<span>VIEW ON INSTAGRAM</span>
-<span>↗</span>
+<div class="work-card-footer">
+<span>OPEN LIVE WORK</span>
+<b>↗</b>
 </div>
 
 </a>
 
+</div>
+
+
+<!-- REAL INSTAGRAM REEL -->
+
+<div class="reel-showcase reveal">
+
+<div class="reel-grid">
+
+<div class="reel-info">
+
+<span class="work-label">
+SHORT-FORM CONTENT / REEL
+</span>
+
+<h3>
+Selected<br>
+Reel
+</h3>
+
+<p>
+A direct example of short-form Instagram content from
+the work you've provided for this portfolio.
+
+Instead of only linking to it, the live Instagram post
+is embedded here so recruiters can see the actual
+content directly inside the portfolio when Instagram's
+embed service is available.
+</p>
+
+<div class="tags">
+<span class="tag">Instagram</span>
+<span class="tag">Reel</span>
+<span class="tag">Short-form Content</span>
+</div>
+
+<br><br>
+
+<a
+href="https://www.instagram.com/reel/DZwMlgaz8KN/"
+target="_blank"
+rel="noopener"
+class="button button-primary">
+Watch on Instagram ↗
+</a>
+
+</div>
+
+
+<div class="reel-embed">
+
+<blockquote
+class="instagram-media"
+data-instgrm-permalink="https://www.instagram.com/reel/DZwMlgaz8KN/"
+data-instgrm-version="14"
+style="
+background:#111;
+border:0;
+margin:0;
+max-width:430px;
+min-width:280px;
+width:100%;
+">
+</blockquote>
 
 </div>
 
 </div>
+
+</div>
+
+</div>
+
 </section>
 
 
-<!-- PROJECTS -->
+<!-- =====================================================
+     PERFORMANCE MARKETING
+===================================================== -->
 
-<section class="projects" id="projects">
+<section class="section performance">
 
 <div class="container">
 
-<div class="section-head reveal">
+<div class="section-heading reveal">
 
-<div class="section-number">
-05 / RESEARCH
+<div class="section-index">
+05 / PERFORMANCE
 </div>
 
 <h2>
-CURIOSITY<br>
-<span>IN ACTION.</span>
+CREATIVE,<br>
+<span class="grey">MEET DATA.</span>
+</h2>
+
+</div>
+
+
+<div class="performance-grid reveal">
+
+
+<div class="performance-card">
+
+<div class="performance-icon">
+01
+</div>
+
+<h3>
+Search & PPC
+</h3>
+
+<p>
+Hands-on experience with PPC advertising and digital
+campaign activity, combined with an understanding of
+search marketing and the role paid channels play in
+driving targeted traffic.
+</p>
+
+</div>
+
+
+<div class="performance-card">
+
+<div class="performance-icon">
+02
+</div>
+
+<h3>
+SEO
+</h3>
+
+<p>
+Experience working with search engine optimization as
+part of broader digital marketing activity, supporting
+online presence and discoverability.
+</p>
+
+</div>
+
+
+<div class="performance-card">
+
+<div class="performance-icon">
+03
+</div>
+
+<h3>
+KPI Monitoring
+</h3>
+
+<p>
+Monitored key performance indicators to understand
+campaign and digital performance and support ongoing
+optimization decisions.
+</p>
+
+</div>
+
+
+<div class="performance-card">
+
+<div class="performance-icon">
+04
+</div>
+
+<h3>
+Competitor Research
+</h3>
+
+<p>
+Analyzed competitors and industry trends to understand
+the wider market environment and support more informed
+marketing decisions.
+</p>
+
+</div>
+
+
+<div class="performance-card">
+
+<div class="performance-icon">
+05
+</div>
+
+<h3>
+Content Marketing
+</h3>
+
+<p>
+Experience supporting content marketing and social
+media activity as part of an integrated approach to
+digital brand presence.
+</p>
+
+</div>
+
+
+<div class="performance-card">
+
+<div class="performance-icon">
+06
+</div>
+
+<h3>
+Market Insight
+</h3>
+
+<p>
+Applied market research findings to campaign thinking,
+helping align digital activity with industry trends and
+customer preferences.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     RESEARCH
+===================================================== -->
+
+<section class="section" id="research">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="section-index">
+06 / PROJECTS
+</div>
+
+<h2>
+RESEARCH BEFORE<br>
+<span class="grey">ASSUMPTIONS.</span>
 </h2>
 
 </div>
@@ -1535,26 +2367,36 @@ CURIOSITY<br>
 
 <div class="reveal">
 
-<div class="project-row">
+<div class="project">
 
-<div class="project-num">01</div>
+<div class="project-number">
+01
+</div>
 
 <h3>
-Social Media & Travel Behaviour
+Social Media,
+Influencers &
+Travel Behaviour
 </h3>
 
 <p>
-Research examining whether social media posts and
-travel influencer vlogs influence the travel behaviour
+Research project analyzing whether social media posts
+and travel influencer vlogs impact the travel behaviour
 and purchase choices of urban Indians.
+
+The project explored the relationship between digital
+content, influencer communication and consumer
+decision-making within the travel category.
 </p>
 
 </div>
 
 
-<div class="project-row">
+<div class="project">
 
-<div class="project-num">02</div>
+<div class="project-number">
+02
+</div>
 
 <h3>
 SHEHAAT
@@ -1562,24 +2404,33 @@ SHEHAAT
 
 <p>
 A live project studying SHEHAAT, a rural women-led
-business focused on promoting women's empowerment.
+business promoting women's empowerment.
+
+The project provided exposure to a purpose-driven
+business model and offered an opportunity to study
+business activity within a social-impact context.
 </p>
 
 </div>
 
 
-<div class="project-row">
+<div class="project">
 
-<div class="project-num">03</div>
+<div class="project-number">
+03
+</div>
 
 <h3>
+Professional
 Market Intelligence
 </h3>
 
 <p>
-Professional experience using market research,
-competitor analysis and industry trends to support
-business planning, marketing and sales decisions.
+During my work at YSM Constructions, market research
+was not limited to academic analysis. I maintained
+industry relationships, gathered market intelligence
+and translated findings into reports and presentations
+used for business and sales planning.
 </p>
 
 </div>
@@ -1587,24 +2438,170 @@ business planning, marketing and sales decisions.
 </div>
 
 </div>
+
 </section>
 
 
-<!-- EDUCATION -->
+<!-- =====================================================
+     SKILLS
+===================================================== -->
 
-<section>
+<section class="section skills" id="skills">
 
 <div class="container">
 
-<div class="section-head reveal">
+<div class="section-heading reveal">
 
-<div class="section-number">
-06 / EDUCATION
+<div class="section-index">
+07 / SKILLS
 </div>
 
 <h2>
-LEARNING<br>
-<span>NEVER STOPS.</span>
+THE<br>
+<span class="grey">TOOLKIT.</span>
+</h2>
+
+</div>
+
+
+<div class="skills-grid reveal">
+
+
+<div class="skill-card">
+
+<span class="skill-number">01</span>
+
+<h3>
+Digital Marketing
+</h3>
+
+<div class="skill-items">
+<span>Digital Marketing</span>
+<span>SEO</span>
+<span>PPC</span>
+<span>Google Ads</span>
+<span>Website Management</span>
+<span>Online Presence</span>
+</div>
+
+</div>
+
+
+<div class="skill-card">
+
+<span class="skill-number">02</span>
+
+<h3>
+Social & Content
+</h3>
+
+<div class="skill-items">
+<span>Social Media Marketing</span>
+<span>Content Marketing</span>
+<span>Campaign Management</span>
+<span>Digital Communication</span>
+<span>Brand Visibility</span>
+</div>
+
+</div>
+
+
+<div class="skill-card">
+
+<span class="skill-number">03</span>
+
+<h3>
+Research & Strategy
+</h3>
+
+<div class="skill-items">
+<span>Market Research</span>
+<span>Competitor Analysis</span>
+<span>Industry Trends</span>
+<span>Brand Strategy</span>
+<span>Market Intelligence</span>
+<span>KPI Monitoring</span>
+</div>
+
+</div>
+
+
+<div class="skill-card">
+
+<span class="skill-number">04</span>
+
+<h3>
+Business & Clients
+</h3>
+
+<div class="skill-items">
+<span>Lead Generation</span>
+<span>Client Communication</span>
+<span>Sales Support</span>
+<span>Relationship Management</span>
+<span>Business Presentations</span>
+</div>
+
+</div>
+
+
+<div class="skill-card">
+
+<span class="skill-number">05</span>
+
+<h3>
+Business Support
+</h3>
+
+<div class="skill-items">
+<span>Invoice Preparation</span>
+<span>Expense Tracking</span>
+<span>Payment Follow-ups</span>
+<span>Financial Records</span>
+</div>
+
+</div>
+
+
+<div class="skill-card">
+
+<span class="skill-number">06</span>
+
+<h3>
+Languages
+</h3>
+
+<div class="skill-items">
+<span>English — Fluent</span>
+<span>Hindi — Native</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     EDUCATION
+===================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="section-index">
+08 / EDUCATION
+</div>
+
+<h2>
+KNOWLEDGE<br>
+<span class="grey">& CREDENTIALS.</span>
 </h2>
 
 </div>
@@ -1612,10 +2609,11 @@ LEARNING<br>
 
 <div class="education-grid reveal">
 
-<div class="edu-card">
 
-<div class="edu-year">
-2022 — 2024
+<div class="education-card">
+
+<div class="education-date">
+AUG 2022 — JUL 2024
 </div>
 
 <h3>
@@ -1630,14 +2628,14 @@ Himachal Pradesh, India
 </div>
 
 
-<div class="edu-card">
+<div class="education-card">
 
-<div class="edu-year">
-2019 — 2022
+<div class="education-date">
+AUG 2019 — JUN 2022
 </div>
 
 <h3>
-B.Sc. Hospitality Administration
+B.Sc. in Hospitality Administration
 </h3>
 
 <p>
@@ -1650,29 +2648,29 @@ Punjab, India
 </div>
 
 
-<h3 class="cert-title reveal">
+<h3 class="certificate-heading reveal">
 Courses & Certifications
 </h3>
 
 
-<div class="cert-list reveal">
+<div class="reveal">
 
-<div class="cert">
-<span>Foundations of Digital Marketing & E-commerce</span>
+<div class="certificate">
+<span>Foundations of Digital Marketing and E-commerce</span>
 <span>Coursera</span>
 </div>
 
-<div class="cert">
+<div class="certificate">
 <span>Fundamentals of Social Media Advertising</span>
 <span>Coursera</span>
 </div>
 
-<div class="cert">
+<div class="certificate">
 <span>Developing Innovative Ideas for Product Leaders</span>
 <span>Coursera</span>
 </div>
 
-<div class="cert">
+<div class="certificate">
 <span>Macroeconomics for Business Management</span>
 <span>Coursera</span>
 </div>
@@ -1680,51 +2678,64 @@ Courses & Certifications
 </div>
 
 </div>
+
 </section>
 
 
-<!-- CONTACT -->
+<!-- =====================================================
+     CONTACT
+===================================================== -->
 
-<section class="contact" id="contact">
+<section class="section contact" id="contact">
 
-<div class="contact-glow"></div>
+<div class="contact-orb"></div>
 
 <div class="container reveal">
 
-<div class="contact-small">
-07 / LET'S CONNECT
+<div class="contact-label">
+09 / CONTACT
 </div>
 
 <h2>
-HAVE AN<br>
-<span>IDEA?</span><br>
-LET'S TALK.
+LET'S MAKE<br>
+<span class="grey">SOMETHING</span><br>
+WORK.
 </h2>
 
 <a
 href="mailto:pranjalm008@gmail.com"
-class="big-email">
+class="contact-email">
 pranjalm008@gmail.com ↗
 </a>
 
-<div class="contact-links">
+
+<div class="contact-actions">
 
 <a
 href="mailto:pranjalm008@gmail.com"
-class="btn btn-primary">
+class="button button-primary">
 Email me
 </a>
 
 <a
 href="tel:+971557387916"
-class="btn btn-dark">
+class="button button-secondary">
 +971 55 738 7916
+</a>
+
+<a
+href="https://wa.me/971557387916"
+target="_blank"
+rel="noopener"
+class="button button-secondary">
+WhatsApp ↗
 </a>
 
 <a
 href="https://www.linkedin.com/in/pranjal-thakur-4573631b1"
 target="_blank"
-class="btn btn-dark">
+rel="noopener"
+class="button button-secondary">
 LinkedIn ↗
 </a>
 
@@ -1735,18 +2746,20 @@ LinkedIn ↗
 </section>
 
 
-<!-- FOOTER -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
-<div class="container footer-inner">
+<div class="container footer">
 
 <span>
 © 2026 PRANJAL THAKUR
 </span>
 
 <span>
-MARKETING • DIGITAL • STRATEGY
+MARKETING • DIGITAL • PERFORMANCE • RESEARCH
 </span>
 
 <span>
@@ -1758,75 +2771,140 @@ UAE
 </footer>
 
 
+<!-- Instagram Embed Script -->
+
+<script async src="//www.instagram.com/embed.js"></script>
+
+
+<!-- SITE JAVASCRIPT -->
+
 <script>
 
-/* MOBILE NAVIGATION */
+/* MOBILE MENU */
 
 function toggleMenu(){
+
     document
     .getElementById("navLinks")
     .classList
-    .toggle("mobile-active");
+    .toggle("open");
+
 }
 
 document
 .querySelectorAll("#navLinks a")
-.forEach(link=>{
+.forEach(link => {
 
-    link.addEventListener("click",()=>{
+    link.addEventListener("click", () => {
 
         document
         .getElementById("navLinks")
         .classList
-        .remove("mobile-active");
+        .remove("open");
 
     });
 
 });
 
 
-/* SCROLL REVEAL */
+/* SCROLL REVEALS */
 
-const observer = new IntersectionObserver(
-(entries)=>{
+const revealObserver =
+new IntersectionObserver(
 
-    entries.forEach(entry=>{
+(entries) => {
+
+    entries.forEach(entry => {
 
         if(entry.isIntersecting){
 
             entry.target
             .classList
-            .add("active");
+            .add("show");
+
+            revealObserver
+            .unobserve(entry.target);
 
         }
 
     });
 
 },
+
 {
-    threshold:.12
+    threshold:0.10
 }
+
 );
 
 document
 .querySelectorAll(".reveal")
-.forEach(element=>{
-    observer.observe(element);
+.forEach(element => {
+
+    revealObserver.observe(element);
+
 });
 
 
-/* SUBTLE NAV CHANGE */
+/* NAV BACKGROUND */
 
-window.addEventListener("scroll",()=>{
+window.addEventListener("scroll", () => {
 
-    const nav = document.querySelector("nav");
+    const nav =
+    document.querySelector(".nav");
 
     if(window.scrollY > 50){
-        nav.style.background = "rgba(8,8,8,.92)";
+
+        nav.style.background =
+        "rgba(8,8,8,.94)";
+
+    }else{
+
+        nav.style.background =
+        "rgba(10,10,10,.72)";
+
     }
-    else{
-        nav.style.background = "rgba(12,12,12,.72)";
-    }
+
+});
+
+
+/* SUBTLE CARD MOVEMENT */
+
+document
+.querySelectorAll(".work-card, .snapshot-card")
+.forEach(card => {
+
+    card.addEventListener("mousemove", e => {
+
+        if(window.innerWidth < 900) return;
+
+        const rect =
+        card.getBoundingClientRect();
+
+        const x =
+        e.clientX - rect.left;
+
+        const y =
+        e.clientY - rect.top;
+
+        const rotateY =
+        ((x / rect.width) - .5) * 2;
+
+        const rotateX =
+        ((y / rect.height) - .5) * -2;
+
+        card.style.transform =
+        `translateY(-6px)
+        rotateX(${rotateX}deg)
+        rotateY(${rotateY}deg)`;
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.transform = "";
+
+    });
 
 });
 
